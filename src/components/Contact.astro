@@ -1,18 +1,34 @@
 <div class="popup-container left-align">
   <div class="popup-card">
-    <div class="popup-title">Inicie Sesión</div>
-    <form class="popup-form">
-      <input class="popup-input" placeholder="Email" />
-      <input class="popup-input" placeholder="Contraseña" />
-      <textarea class="popup-input" placeholder="Mensaje..."></textarea>
-      <button class="popup-button">Registrarse</button>
+    <div class="popup-title">Contáctanos</div>
+    <form class="popup-form" id="loginForm">
+      <input
+        class="popup-input"
+        id="emailInput"
+        name="email"
+        placeholder="Email"
+        required
+      />
+      <input
+        class="popup-input"
+        id="passwordInput"
+        name="password"
+        placeholder="Contraseña"
+        required
+      />
+      <textarea
+        class="popup-input"
+        name="mensaje"
+        placeholder="Mensaje..."
+      ></textarea>
+      <button class="popup-button" type="submit">Enviar</button>
     </form>
   </div>
 </div>
 
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,800&display=swap');
-
   /* === ESTILOS BASE (MOBILE FIRST) === */
   .popup-container {
     position: fixed;
