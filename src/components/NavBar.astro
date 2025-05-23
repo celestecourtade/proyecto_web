@@ -1,0 +1,53 @@
+<nav class="nav">
+  <ul class="nav-list">
+    <li><a href="/">🏠 Inicio</a></li>
+    <li><a href="/personajes">🖼️ Personajes</a></li>
+    <li><a href="/apiidea">🛠️ API idea</a></li>
+    <li><a href="/about_us">📜 About Us</a></li>
+  </ul>
+</nav>
+
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+   * {
+    box-sizing: border-box;
+  }
+  .nav {
+    padding-top: 10px;
+    width: 100%;
+    font-family: 'Press Start 2P', cursive;
+    max-width: 100%;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-list a {
+    color: #fff;
+    background-color: #444;
+    padding: 10px 16px;
+    border: 3px solid #000;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+/*Efecto al posicionar el mouse*/
+  .nav-list a:hover {
+    background-color:rgba(255, 255, 255, 0.63);;
+    color: #000;
+    transform: translateY(-2px);
+  }
+
+/*Efecto al apretar*/
+  .nav-list a:active {
+    transform: translateY(3px);
+  }
+</style>
+

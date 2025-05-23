@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+    <main>
+        <div class="container">
+            <div class="container__card">
+                <article class="card__article">
+                    <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Agostina</h2>
+                        <span class="card__description">No lo sabemos, pero tiene un pelo muy lindo</span>
+                    </section>
+                </article>
+
+                <article class="card__article">
+                    <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Mauro</h2>
+                        <span class="card__description">Estudiante de ingeniería adicto a la cafeína (creemos que es un pato)</span>
+                    </section>
+                </article>
+
+                <article class="card__article">
+                    <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Celeste</h2>
+                        <span class="card__description">No lo sabemos, pero es muy buena con CSS</span>
+                    </section>
+                </article>
+
+                <article class="card__article">
+                    <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Valentina</h2>
+                        <span class="card__description">Estudiante de ingeniería y coleccionista de Pokemon TCG</span>
+                    </section>
+                </article>
+
+                <article class="card__article">
+                    <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Santiago</h2>
+                        <span class="card__description">Profesor, programador y esclavo de un gato</span>
+                    </section>
+                </article>
+
+                <article class="card__article">
+                    <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Gabriel</h2>
+                        <span class="card__description">Profesor, programador y víctima de cortes de luz</span>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </main>
+    <footer>
+        
+    </footer>
+</Layout>
+
+
+<style>
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-image: url(/images/BlackCatWindowGazing.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* background-position-x:center;
+        background-clip:border-box; */
+        background-attachment:fixed;
+    }
+
+    .container{
+        display: grid;
+        place-items: center;
+        margin-inline: 5rem;
+        padding-top: 2.5rem;
+        height: 100%;
+    }
+
+    .container__card{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 2rem;
+        column-gap: 5rem;
+        padding: 2.5rem;
+        /* padding-left: 2rem;
+        padding-right: 2rem; */
+    }
+
+    .card__article{
+        position: relative;
+        justify-self: center;
+        justify-items: center;
+    }
+
+    .card__img{
+        width:100%;
+        object-fit: cover;
+        border-radius: 1.5rem;
+    }
+
+    .card__data{
+        width: 75%;
+        background-color: #fafafa;
+        position: absolute;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 8px 24px gray;
+        border-radius: 1.5rem;
+        position: absolute;
+        bottom: -9rem;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        opacity: 0;
+        transition: opacity 1s 1s;
+    }
+
+    .card__description {
+        display: block;
+        margin-bottom: .25rem;
+    }
+
+    .card__title {
+        font-weight: 500;
+        margin-bottom: .75rem;
+    }
+
+    /* Naming animations in hover */
+    .card__article:hover .card__data {
+        animation: show-data 1s forwards;
+        opacity: 1;
+        transition: opacity .3s;
+    }
+
+    .card__article:hover {
+        animation: remove-overflow 2s forwards;
+    }
+
+    .card__article:not(:hover) {
+        animation: show-overflow 2s forwards;
+    }
+
+    .card__article:not(:hover) .card__data {
+        animation: remove-data 1s forwards;
+    }
+
+    /* Card animation */
+    @keyframes show-data {
+        50% {
+            transform: translateY(-10rem);
+        }
+        100% {
+            transform: translateY(-7rem);
+        }
+    }
+
+    @keyframes remove-overflow {
+        to {
+            overflow: initial;
+        }
+    }
+
+    @keyframes remove-data {
+        0% {
+            transform: translateY(-7rem);
+        }
+        50% {
+            transform: translateY(-10rem);
+        }
+        100% {
+            transform: translateY(.5rem);
+        }
+    }
+
+    @keyframes show-overflow {
+        0% {
+            overflow: initial;
+            pointer-events: none;
+        }
+        50% {
+            overflow: hidden;
+        }
+    }
+</style>
