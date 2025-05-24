@@ -1,0 +1,121 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main>
+    <section class="situation">
+      <h1 id="presentation">
+        Se le dara una serie de casos para descubrir al posible culpable
+      </h1>
+      <a id="suspicious1"></a>
+      <a id="suspicious2"></a>
+      <a id="suspicious3"></a>
+      <button class="next">Siguiente</button>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    background-image: url(/images/Pixel_Train.png);
+    min-height: 100svh;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .situation {
+    padding-top: 5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+
+  #presentation {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: oklch(0.7794 0.1332 232.94);
+    border: 2px solid black;
+    padding: 8px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    border-width: 1px;
+    display: block;
+    word-wrap: break-word; /*broke words like the command said  */
+  }
+
+  #suspicious1 {
+    background-color: oklch(0.5118 0.1875 257.29);
+    color: oklch(0.85 0.0321 257.29);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 200px;
+  }
+
+  #suspicious2 {
+    background-color: oklch(0.5118 0.1875 257.29);
+    color: oklch(0.85 0.0321 257.29);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 200px;
+  }
+
+  #suspicious3 {
+    background-color: oklch(0.5118 0.1875 257.29);
+    color: oklch(0.85 0.0321 257.29);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 200px;
+  }
+
+  .next {
+    background-color: oklch(0.5118 0.1875 257.29);
+    color: oklch(0.85 0.0321 257.29);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 200px;
+  }
+
+  .next:hover {
+    color: white;
+  }
+</style>
+<script>
+  async function loadCases(x) {
+    try {
+      const response = await fetch("/api/cases.json");
+      const data = await response.json();
+
+      document.getElementById("presentation").textContent = data[x].title;
+      document.getElementById("suspicious1").textContent = data[x].suspicious1;
+      document.getElementById("suspicious2").textContent = data[x].suspicious2;
+      document.getElementById("suspicious3").textContent = data[x].suspicious3;
+    } catch (error) {
+      console.error("Error:", error);
+      document.getElementById("presentation").textContent = "No hay mas";
+    }
+  }
+  let x = 1;
+  const $buttonNext = document.querySelector(".next");
+  $buttonNext.addEventListener("click", () => {
+    loadCases(x);
+    x++;
+  });
+</script>
