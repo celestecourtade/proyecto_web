@@ -1,0 +1,19 @@
+{
+  "1" : {
+  "title": "Una poeta muere envenenada. En su mano hay una carta con las palabras: El que busca la verdad, encuentra la muerte",
+  "suspicious1": "Miguel (editor)",
+  "suspicious2": "Ana (mejor amiga)",
+  "suspicious3": "Luis (admirador)",
+  "clue": "La víctima era zurda, pero la carta estaba en su mano derecha."
+  },
+
+  "2" : {
+  "title": "example2",
+  "victim": "pepe"
+  },
+
+  "3" : {
+  "title": "example3",
+  "victim": "kill-me"
+  }
+}
