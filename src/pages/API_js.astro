@@ -6,11 +6,15 @@ import Layout from "../layouts/Layout.astro";
   <main>
     <section class="situation">
       <h1 id="presentation">
-        Se le dara una serie de casos para descubrir al posible culpable
+        Se le dara una serie de casos para descubrir al posible culpable que
+        apareceran debajo
       </h1>
-      <a id="suspicious1"></a>
-      <a id="suspicious2"></a>
-      <a id="suspicious3"></a>
+      <a id="suspicious1">Posible Culpable 1</a>
+      <br />
+      <a id="suspicious2">Posible Culpable 2</a>
+      <br />
+      <a id="suspicious3">Posible Culpable 3</a>
+      <br />
       <button class="next">Siguiente</button>
     </section>
   </main>
@@ -32,10 +36,10 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .situation {
-    padding-top: 5rem;
     text-align: center;
-    margin-bottom: 10px;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   #presentation {
@@ -53,36 +57,9 @@ import Layout from "../layouts/Layout.astro";
     word-wrap: break-word; /*broke words like the command said  */
   }
 
-  #suspicious1 {
-    background-color: oklch(0.5118 0.1875 257.29);
-    color: oklch(0.85 0.0321 257.29);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 200px;
-  }
-
-  #suspicious2 {
-    background-color: oklch(0.5118 0.1875 257.29);
-    color: oklch(0.85 0.0321 257.29);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 200px;
-  }
-
-  #suspicious3 {
-    background-color: oklch(0.5118 0.1875 257.29);
-    color: oklch(0.85 0.0321 257.29);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 200px;
-  }
-
+  #suspicious1,
+  #suspicious2,
+  #suspicious3,
   .next {
     background-color: oklch(0.5118 0.1875 257.29);
     color: oklch(0.85 0.0321 257.29);
@@ -90,7 +67,7 @@ import Layout from "../layouts/Layout.astro";
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 200px;
+    margin-top: 10px;
   }
 
   .next:hover {
@@ -107,15 +84,37 @@ import Layout from "../layouts/Layout.astro";
       document.getElementById("suspicious1").textContent = data[x].suspicious1;
       document.getElementById("suspicious2").textContent = data[x].suspicious2;
       document.getElementById("suspicious3").textContent = data[x].suspicious3;
+      correct(data,x);
     } catch (error) {
       console.error("Error:", error);
-      document.getElementById("presentation").textContent = "No hay mas";
+      document.getElementById("presentation").textContent = "Error";
     }
   }
-  let x = 1;
-  const $buttonNext = document.querySelector(".next");
-  $buttonNext.addEventListener("click", () => {
-    loadCases(x);
-    x++;
-  });
+
+  function getRandomId(min, max) {
+    return Math.floor(Math.random() * (max - min) + min); //math.floor() round down the number, tbh idk how work, I really think but dont know how limit the rage wtf
+  }
+
+  function correct(data,x) {
+    document.querySelector(".situation")?.addEventListener("click", (e) => {
+      if (e.target.matches("#suspicious1, #suspicious2, #suspicious3")) {
+        const selectName = e.target.textContent;
+        console.log(selectName)
+        if(selectName == data[x].correct){
+          nextCase();
+        }
+      }
+    });
+  }
+
+  function nextCase() {
+    const $buttonNext = document.querySelector(".next");
+    $buttonNext?.addEventListener("click", () => {
+      let x = getRandomId(1, 4);
+      loadCases(x);
+    });
+  }
+
+  nextCase();
+
 </script>
