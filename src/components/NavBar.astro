@@ -1,53 +1,109 @@
 <nav class="nav">
+  <button class="menu-toggle" onclick="document.querySelector('.nav-list').classList.toggle('open')">☰</button>
   <ul class="nav-list">
     <li><a href="/">🏠 Inicio</a></li>
     <li><a href="/personajes">🖼️ Personajes</a></li>
-    <li><a href="/apiidea">🛠️ API idea</a></li>
-    <li><a href="/contact">📜 About Us</a></li>
+    <li><a href="/API_js">🛠️ API idea</a></li>
+    <li><a href="/about_us">📜 About Us</a></li>
   </ul>
 </nav>
 
 <style>
- @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-   * {
+  * {
     box-sizing: border-box;
   }
+
   .nav {
     padding: 10px;
-    width: 100%;
     font-family: 'Press Start 2P', cursive;
-    max-width: 100%;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: 2px solid #000000;
+    color: #000000;
+    font-size: 1.5rem;
+    padding: 2px 2px;
+    cursor: pointer;
+    display: left;
+    margin: 0 auto 10px auto;
   }
 
   .nav-list {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px; 
-    margin: 0;
+    display: none; /* oculto por defecto en mobile */
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .nav-list.open {
+    display: flex; /* mostrar en mobile */
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
     padding: 0;
   }
 
   .nav-list a {
     color: #fff;
     background-color: #444;
-    padding: 10px 16px;
+    padding: 2px 4px;
     border: 3px solid #000;
     text-decoration: none;
     display: inline-block;
   }
 
-/*Efecto al posicionar el mouse*/
   .nav-list a:hover {
-    background-color:rgba(255, 255, 255, 0.63);;
+    background-color: rgba(255, 255, 255, 0.63);
     color: #000;
     transform: translateY(-2px);
   }
 
-/*Efecto al apretar*/
   .nav-list a:active {
     transform: translateY(3px);
   }
-</style>
 
+  @media (min-width: 770px) and (max-width: 1220px) {
+    .menu-toggle {
+      display: none;
+    }
+
+    .nav-list {
+      display: flex; /* mostrar en desktop */
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      font-size: 15px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    }
+
+@media (min-width: 1220px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .nav-list a {
+    font-size: 20px;
+    padding: 7px 24px;
+    border-width: 4px;
+  }
+}
+
+
+</style>
