@@ -1,28 +1,111 @@
 ---
+import Contact from '../components/Contact.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-  </head>
-  <body>
-    <video autoplay muted loop class="video-background">
-      <source src="/images/index_video.mp4" type="video/mp4" />
-    </video>
-  </body>
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8" />
+    </head>
+    <body>
+      <video autoplay muted loop class="video-background">
+        <source src="/images/index_video.mp4" type="video/mp4" />
+      </video>
+
+      <button class="contactButton">
+        Contactános
+        <div class="iconButton">
+          <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+      </button>
+
+      <Contact />
+
+    </body>
+
     <style>
-    .video-background {
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .video-background {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 120%;
         object-fit: cover;
         z-index: -1;
         object-position: 70% center; 
-    }
-</style>
-</html>
+      }
+
+      .contactButton {
+        background: #f7df037a;
+        color: white;
+        font-family: 'Press Start 2P', cursive;
+        padding: 0.45em 3em 0.45em 1em;
+        font-size: 14px;
+        border-radius: 0.9em;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        box-shadow: inset 0 0 1.6em -0.6em #f7df037a;
+        height: 2.8em;
+        justify-content: right;
+        margin: 86vh auto 0 auto;
+        float: right;
+      }
+
+      .iconButton {
+        margin-left: 1em;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.2em;
+        width: 2.2em;
+        border-radius: 0.7em;
+        box-shadow: 0.1em 0.1em 0.6em 0.2em #d2d6ec;
+        right: 0.3em;
+        transition: all 0.3s;
+      }
+
+      .contactButton:hover {
+        transform: translate(-0.05em, -0.05em);
+        box-shadow: 0.15em 0.15em rgba(149, 29, 33, 0.2);
+      }
+
+      .contactButton:active {
+        transform: translate(0.05em, 0.05em);
+        box-shadow: 0.05em 0.05em #5566c2;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector(".contactButton");
+        const popup = document.getElementById("popup");
+
+        if (btn && popup) {
+          btn.addEventListener("click", () => {
+            popup.classList.add("active");
+          });
+        }
+      });
+    </script>
+  </html>
 </Layout>
