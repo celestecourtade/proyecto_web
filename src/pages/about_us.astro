@@ -3,54 +3,56 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout>
     <main>
-        <div class="container__card">
-            <article class="card__article">
-                <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
-                <section class="card__data">
-                    <h2 class="card__title">Nombre: Agostina</h2>
-                    <span class="card__description">No lo sabemos, pero tiene un pelo muy lindo</span>
-                </section>
-            </article>
+        <div class="container">
+            <div class="card__container">
+                <article class="card__article">
+                    <img class="card__img" src="/images/Leafeon_Maple_Leaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Agostina</h2>
+                        <span class="card__description">No lo sabemos, pero tiene un pelo muy lindo</span>
+                    </section>
+                </article>
 
-            <article class="card__article">
-                <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
-                <section class="card__data">
-                    <h2 class="card__title">Nombre: Mauro</h2>
-                    <span class="card__description">Estudiante de ingeniería adicto a la cafeína (creemos que es un pato)</span>
-                </section>
-            </article>
+                <article class="card__article">
+                    <img class="card__img" src="/images/Leafeon_Maple_Leaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Mauro</h2>
+                        <span class="card__description">Estudiante de ingeniería adicto a la cafeína (creemos que es un pato)</span>
+                    </section>
+                </article>
 
-            <article class="card__article">
-                <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
-                <section class="card__data">
-                    <h2 class="card__title">Nombre: Celeste</h2>
-                    <span class="card__description">No lo sabemos, pero es muy buena con CSS</span>
-                </section>
-            </article>
+                <article class="card__article">
+                    <img class="card__img" src="/images/Leafeon_Maple_Leaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Celeste</h2>
+                        <span class="card__description">No lo sabemos, pero es muy buena con CSS</span>
+                    </section>
+                </article>
 
-            <article class="card__article">
-                <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
-                <section class="card__data">
-                    <h2 class="card__title">Nombre: Valentina</h2>
-                    <span class="card__description">Estudiante de ingeniería y coleccionista de Pokemon TCG</span>
-                </section>
-            </article>
+                <article class="card__article">
+                    <img class="card__img" src="/images/Leafeon_Maple_Leaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Valentina</h2>
+                        <span class="card__description">Estudiante de ingeniería y coleccionista de Pokemon TCG</span>
+                    </section>
+                </article>
 
-            <article class="card__article">
-                <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
-                <section class="card__data">
-                    <h2 class="card__title">Nombre: Santiago</h2>
-                    <span class="card__description">Profesor, programador y esclavo de un gato</span>
-                </section>
-            </article>
+                <article class="card__article">
+                    <img class="card__img" src="/images/Leafeon_Maple_Leaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Santiago</h2>
+                        <span class="card__description">Profesor, programador y esclavo de un gato</span>
+                    </section>
+                </article>
 
-            <article class="card__article">
-                <img class="card__img" src="/images/LeafeonMapleLeaves.png" alt="">
-                <section class="card__data">
-                    <h2 class="card__title">Nombre: Gabriel</h2>
-                    <span class="card__description">Profesor, programador y víctima de cortes de luz</span>
-                </section>
-            </article>
+                <article class="card__article">
+                    <img class="card__img" src="/images/Leafeon_Maple_Leaves.png" alt="">
+                    <section class="card__data">
+                        <h2 class="card__title">Nombre: Gabriel</h2>
+                        <span class="card__description">Profesor, programador y víctima de cortes de luz</span>
+                    </section>
+                </article>
+            </div>
         </div>
     </main>
 </Layout>
@@ -63,43 +65,48 @@ import Layout from '../layouts/Layout.astro';
         margin: 0;
     }
     body{
-        background-image: url(/images/BlackCatWindowGazing.png);
+        background-image: url(/images/background_mobile_about_us.png);
         background-repeat: no-repeat;
         background-size: cover;
-        /* background-position-x:center;
-        background-clip:border-box; */
         background-attachment: fixed;
     }
 
-    .container__card{
-        display: flex;
-        flex-direction: column;
-        row-gap: 2rem;
-        column-gap: 5rem;
-        padding: 2.5rem;
-        /* padding-left: 2rem;
-        padding-right: 2rem; */
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
     }
 
-    .card__article{
+    /*=============== CARD ===============*/
+    .container {
+        display: grid;
+        place-items: center;
+        margin-inline: 1.5rem;
+        padding-block: 5rem;
+    }
+
+    .card__container {
+        display: grid;
+        row-gap: 3rem;
+    }
+
+    .card__article {
         position: relative;
-        justify-self: center;
-        justify-items: center;
+        overflow: hidden;
+        margin-bottom: 10%;
     }
 
-    .card__img{
-        width:100%;
-        object-fit: cover;
+    .card__img {
+        width: 328px;
         border-radius: 1.5rem;
     }
 
-    .card__data{
-        width: 75%;
+    .card__data {
+        width: 280px;
         background-color: #fafafa;
-        position: absolute;
         padding: 1.5rem 2rem;
-        box-shadow: 0 8px 24px gray;
-        border-radius: 1.5rem;
+        box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+        border-radius: 1rem;
         position: absolute;
         bottom: -9rem;
         left: 0;
@@ -178,25 +185,28 @@ import Layout from '../layouts/Layout.astro';
         
     /*=============== BREAKPOINTS ===============*/
     /* For medium devices */
-    @media (min-width: 481px) and (max-width: 770px) {
+    @media (min-width: 481px) {
         .card__container {
-            grid-template-rows: repeat(4, 1fr);
             grid-template-columns: repeat(2, 1fr);
             column-gap: 1.5rem;
         }
     }
 
     /* For large devices */
-    @media (min-width: 771px) {
-        /* .container {
+    @media (min-width: 770px) {
+
+        body{
+            background-image: url(/images/BlackCatWindowGazing.png);
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .container {
             height: 100vh;
-        } */
+        }
 
         .card__container {
-            display: grid;
-            grid-template-rows: repeat(2, 1fr);
             grid-template-columns: repeat(3, 1fr);
-            height: auto;
         }
         .card__img {
             width: 348px;
