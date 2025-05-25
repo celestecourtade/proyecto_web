@@ -1,0 +1,382 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<layout>
+    <main>
+    <section>
+        <div class="container">
+          <div class="carousel">
+            <input type="radio" name="slides" checked="checked" id="slide-1">
+            <input type="radio" name="slides" id="slide-2">
+            <input type="radio" name="slides" id="slide-3">
+            <input type="radio" name="slides" id="slide-4">
+            <input type="radio" name="slides" id="slide-5">
+            <input type="radio" name="slides" id="slide-6">
+      
+            <ul class="carousel__slides">
+              <li class="carousel__slide">
+                <figure class="slide-content">
+                  <div class="slide-content_left">
+                    <img src="/public/images/img1.jpg" alt="Personaje 1">
+                  </div>
+                  <div class="slide-content_right">
+                    <h2>Personaje 1</h2>
+                    <p>Una breve descripción del personaje 1. Historia, personalidad o algún detalle interesante.</p>
+                  </div>
+                </figure>
+              </li>
+      
+              <li class="carousel__slide">
+                <figure class="slide-content">
+                  <div class="slide-content_left">
+                    <img src="/public/images/img2.jpg" alt="Personaje 2">
+                  </div>
+                  <div class="slide-content_right">
+                    <h2>Personaje 2</h2>
+                    <p>Descripción del personaje 2. Puedes contar quién es o qué lo representa.</p>
+                  </div>
+                </figure>
+              </li>
+      
+              <li class="carousel__slide">
+                <figure class="slide-content">
+                  <div class="slide-content_left">
+                    <img src="/public/images/img3.jpg" alt="Personaje 3">
+                  </div>
+                  <div class="slide-content_right">
+                    <h2>Personaje 3</h2>
+                    <p>Descripción del personaje 3. Puedes agregar una frase o contexto.</p>
+                  </div>
+                </figure>
+              </li>
+      
+              <li class="carousel__slide">
+                <figure class="slide-content">
+                  <div class="slide-content_left">
+                    <img src="/public/images/img4.jpg" alt="Personaje 4">
+                  </div>
+                  <div class="slide-content_right">
+                    <h2>Personaje 4</h2>
+                    <p>Algo interesante sobre este personaje. Historia, características o algo llamativo.</p>
+                  </div>
+                </figure>
+              </li>
+      
+              <li class="carousel__slide">
+                <figure class="slide-content">
+                  <div class="slide-content_left">
+                    <img src="/public/images/img3.jpg" alt="Personaje 5">
+                  </div>
+                  <div class="slide-content_right">
+                    <h2>Personaje 5</h2>
+                    <p>Descripción breve. También podés usar este espacio para una cita o pensamiento.</p>
+                  </div>
+                </figure>
+              </li>
+      
+              <li class="carousel__slide">
+                <figure class="slide-content">
+                  <div class="slide-content_left">
+                    <img src="/public/images/img4.jpg" alt="Personaje 6">
+                  </div>
+                  <div class="slide-content_right">
+                    <h2>Personaje 6</h2>
+                    <p>Una última descripción del personaje. Puede ser emocional, divertida o poética.</p>
+                  </div>
+                </figure>
+              </li>
+            </ul>
+      
+            <ul class="carousel__thumbnails">
+              <li><label for="slide-1"><img src="img/img1.jpg" alt=""></label></li>
+              <li><label for="slide-2"><img src="img/img2.jpg" alt=""></label></li>
+              <li><label for="slide-3"><img src="img/img3.jpg" alt=""></label></li>
+              <li><label for="slide-4"><img src="img/img4.jpg" alt=""></label></li>
+              <li><label for="slide-5"><img src="img/img3.jpg" alt=""></label></li>
+              <li><label for="slide-6"><img src="img/img4.jpg" alt=""></label></li>
+            </ul>
+            <button id="prev-btn" aria-label="Anterior">‹</button>
+            <button id="next-btn" aria-label="Siguiente">›</button>
+          </div>
+        </div>
+      </section>
+    </main>
+</layout> 
+
+<style>
+    /* Reset y estilos base globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* Base para rem */
+}
+
+/* Contenedor principal centrado y con padding */
+.container {
+ /* max-width: 75rem; 
+  margin-left: auto;
+  margin-right: auto; */
+  padding: 1rem 1.5rem;
+}
+
+/* Carousel base (móvil primero) */
+.carousel {
+  position: relative;
+  overflow: visible;
+}
+
+/* Ocultar radios */
+.carousel input[type="radio"] {
+  display: none;
+}
+
+/* Slides list */
+.carousel__slides {
+  list-style: none;
+  position: relative;
+  height: 25rem; /* Altura base para móvil */
+}
+
+/* Cada slide */
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* Slide activo */
+.carousel input:nth-of-type(1):checked ~ .carousel__slides li:nth-of-type(1),
+.carousel input:nth-of-type(2):checked ~ .carousel__slides li:nth-of-type(2),
+.carousel input:nth-of-type(3):checked ~ .carousel__slides li:nth-of-type(3),
+.carousel input:nth-of-type(4):checked ~ .carousel__slides li:nth-of-type(4),
+.carousel input:nth-of-type(5):checked ~ .carousel__slides li:nth-of-type(5),
+.carousel input:nth-of-type(6):checked ~ .carousel__slides li:nth-of-type(6) {
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Contenido del slide - Móvil: columna centrada */
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+/* Imagen del slide */
+.slide-content_left img {
+  max-width: 18rem;
+  height: auto;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Texto del slide */
+.slide-content_right h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.slide-content_right p {
+  font-size: 1rem;
+  max-width: 90vw;
+  line-height: 1.5;
+}
+
+/* Miniaturas */
+.carousel__thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.carousel__thumbnails img {
+  width: 2.8rem;
+  height: 6.25rem;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 0.625rem;
+  transition: transform 0.8s ease, border-color 0.3s ease;
+}
+
+.carousel__thumbnails img:hover {
+  transform: scale(1.05);
+  border-color: #fff;
+}
+
+/* Botones next/prev */
+.carousel button {
+  position: absolute;
+  top: 27%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+#prev-btn {
+  left: 0.5rem;
+}
+
+#next-btn {
+  right: 0.5rem;
+}
+
+.carousel button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* ------------------ MEDIA QUERIES ------------------ */
+
+/* Tablet: 481px a 769px */
+@media (min-width: 481px) and (max-width: 769px) {
+
+
+  .container {
+    padding-top: 4rem;
+  }
+
+  .slide-content {
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .slide-content_left img {
+    max-width: 15rem;
+  }
+
+  .slide-content_right h2 {
+    font-size: 1.75rem;
+  }
+
+  .slide-content_right p {
+    font-size: 1.125rem;
+    max-width: 28rem;
+  }
+
+  .carousel__thumbnails {
+    height: 4rem;
+  }
+
+
+  .carousel__thumbnails img {
+    width: 4rem;
+    height: 7rem;
+  }
+
+
+  .carousel button {
+    font-size: 2.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  #prev-btn {
+    left: 1rem;
+  }
+
+  #next-btn {
+    right: 1rem;
+  }
+}
+
+/* Desktop: 770px a 1220px */
+@media (min-width: 770px) and (max-width: 1220px) {
+
+
+  .slide-content {
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+
+  .slide-content_right h2 {
+    font-size: 2rem;
+  }
+
+
+  .carousel__thumbnails {
+    margin: 5rem;
+  }
+
+  .carousel__thumbnails img {
+    width: 5rem;
+    height: 7.5rem;
+  }
+
+  .carousel button {
+    font-size: 3rem;
+    padding: 1rem 1.5rem;
+  }
+
+  #prev-btn {
+    left: 1.25rem;
+  }
+
+  #next-btn {
+    right: 1.25rem;
+  }
+}
+
+</style>
+
+<script>
+
+  // Obtener todos los inputs radio de slides
+  const slides = document.querySelectorAll('.carousel input[type="radio"]');
+  const nextBtn = document.getElementById('next-btn');
+  const prevBtn = document.getElementById('prev-btn');
+
+  // Función para obtener el índice del slide activo
+  function getCurrentIndex() {
+    return Array.from(slides).findIndex(input => input.checked);
+  }
+
+  // Avanzar slide
+  function nextSlide() {
+    let currentIndex = getCurrentIndex();
+    slides[(currentIndex + 1) % slides.length].checked = true;
+  }
+
+  // Retroceder slide
+  function prevSlide() {
+    let currentIndex = getCurrentIndex();
+    slides[(currentIndex - 1 + slides.length) % slides.length].checked = true;
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // Autoplay cada 4 segundos
+  setInterval(nextSlide, 8000);
+</script>
+      
+
