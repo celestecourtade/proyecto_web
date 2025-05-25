@@ -1,35 +1,18 @@
-<div class="popup-container left-align">
+<div class="popup-container left-align" id="popup">
   <div class="popup-card">
     <div class="popup-title">Contáctanos</div>
     <form class="popup-form" id="loginForm">
-      <input
-        class="popup-input"
-        id="emailInput"
-        name="email"
-        placeholder="Email"
-        required
-      />
-      <input
-        class="popup-input"
-        id="passwordInput"
-        name="password"
-        placeholder="Contraseña"
-        required
-      />
-      <textarea
-        class="popup-input"
-        name="mensaje"
-        placeholder="Mensaje..."
-      ></textarea>
+      <input class="popup-input" name="email" placeholder="Email" required />
+      <input class="popup-input" name="password" placeholder="Contraseña" required />
+      <textarea class="popup-input" name="mensaje" placeholder="Mensaje..."></textarea>
       <button class="popup-button" type="submit">Enviar</button>
     </form>
   </div>
 </div>
 
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,800&display=swap');
-  /* === ESTILOS BASE (MOBILE FIRST) === */
+
   .popup-container {
     position: fixed;
     top: 0;
@@ -37,11 +20,16 @@
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.6);
-    display: flex;
+    display: none; /* Oculto por defecto */
     align-items: center;
     justify-content: center;
     padding: 20px;
     box-sizing: border-box;
+    z-index: 999;
+  }
+
+  .popup-container.active {
+    display: flex;
   }
 
   .popup-container.left-align {
@@ -58,7 +46,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 400px; /* Cambiado para reducir el ancho horizontal */
+    max-width: 400px;
     box-sizing: border-box;
   }
 
@@ -110,50 +98,5 @@
   .popup-button:active {
     transform: translate(2px, 2px);
     box-shadow: 0 0 #333;
-  }
-
-  /* === TABLETS (≥768px) === */
-  @media screen and (min-width: 768px) {
-    .popup-card {
-      padding: 50px 30px;
-      border-radius: 25px;
-      max-width: 450px;
-    }
-
-    .popup-title {
-      font-size: 22px;
-    }
-
-    .popup-button {
-      font-size: 17px;
-    }
-
-    .popup-input {
-      font-size: 15px;
-    }
-  }
-
-  /* === DESKTOPS (≥992px) === */
-  @media screen and (min-width: 992px) {
-    .popup-container {
-      padding: 60px;
-    }
-
-    .popup-card {
-      padding: 70px 40px;
-      max-width: 500px;
-      border-radius: 30px;
-    }
-
-    .popup-title {
-      font-size: 24px;
-    }
-  }
-
-  /* === LARGE DESKTOPS (≥1200px) === */
-  @media screen and (min-width: 1200px) {
-    .popup-card {
-      max-width: 550px;
-    }
   }
 </style>
