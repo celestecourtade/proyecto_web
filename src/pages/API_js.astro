@@ -75,24 +75,24 @@ import Layout from "../layouts/Layout.astro";
   }
 </style>
 <script>
-  async function loadCases(x) {
+  async function loadCases(x : number) {
     try {
       const response = await fetch("/api/cases.json");
       const data = await response.json();
 
-      // Update the console
+      // 2... Update the console
       document.getElementById("presentation")!.textContent = data[x].title;
       document.getElementById("suspicious1")!.textContent = data[x].suspicious1;
       document.getElementById("suspicious2")!.textContent = data[x].suspicious2;
       document.getElementById("suspicious3")!.textContent = data[x].suspicious3;
 
-      // delete previous listeners
+      // 7... delete previous listeners , if currentAnswerListener is true that mean it's not the first time
       if (currentAnswerListener) {
         document.querySelector(".situation");
         document.removeEventListener("click", currentAnswerListener);
       }
 
-      // Create a new listener
+      //3... Create a new listener
       currentAnswerListener = handleAnswerClick(data, x);
       document.querySelector(".situation");
       document.addEventListener("click", currentAnswerListener);
@@ -102,21 +102,21 @@ import Layout from "../layouts/Layout.astro";
     }
   }
 
-  function handleAnswerClick(data, x) {
-    return function (e) {
-      if (e.target.matches("#suspicious1, #suspicious2, #suspicious3")) {
-        if (e.target.textContent === data[x].correct) {
-          // Eliminar este listener específico
+  function handleAnswerClick(data : any, x : number) {
+    return function (e : MouseEvent) {
+      if (e.target!.matches("#suspicious1, #suspicious2, #suspicious3")) {
+        if (e.target!.textContent === data[x].correct) {
+          //4... Eliminar este listener específico
           document.querySelector(".situation");
           document.removeEventListener("click", currentAnswerListener!);
-          // Cargar nuevo caso
+          //5... Cargar nuevo caso
           loadCases(getRandomId(1, 4));
         }
       }
     };
   }
 
-  function getRandomId(min, max) {
+  function getRandomId(min : number, max : number) {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
@@ -125,8 +125,8 @@ import Layout from "../layouts/Layout.astro";
     loadCases(getRandomId(1, 4));
   });
 
-  //load the first case
+  //1....load the first case
   let currentCaseId;
   let currentAnswerListener = null;
-  loadCases(getRandomId(1, 4));
+  // loadCases(getRandomId(1, 4)); //commit that for avoid load the JSON in the beginning
 </script>
