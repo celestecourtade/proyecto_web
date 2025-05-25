@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
     <section class="situation">
       <h1 id="presentation">
         Se le dara una serie de casos para descubrir al posible culpable que
-        apareceran debajo
+        apareceran debajo, si es correcto pasara al siguiente
       </h1>
       <a id="suspicious1">Posible Culpable 1</a>
       <br />
@@ -80,41 +80,53 @@ import Layout from "../layouts/Layout.astro";
       const response = await fetch("/api/cases.json");
       const data = await response.json();
 
-      document.getElementById("presentation").textContent = data[x].title;
-      document.getElementById("suspicious1").textContent = data[x].suspicious1;
-      document.getElementById("suspicious2").textContent = data[x].suspicious2;
-      document.getElementById("suspicious3").textContent = data[x].suspicious3;
-      correct(data,x);
+      // Update the console
+      document.getElementById("presentation")!.textContent = data[x].title;
+      document.getElementById("suspicious1")!.textContent = data[x].suspicious1;
+      document.getElementById("suspicious2")!.textContent = data[x].suspicious2;
+      document.getElementById("suspicious3")!.textContent = data[x].suspicious3;
+
+      // delete previous listeners
+      if (currentAnswerListener) {
+        document.querySelector(".situation");
+        document.removeEventListener("click", currentAnswerListener);
+      }
+
+      // Create a new listener
+      currentAnswerListener = handleAnswerClick(data, x);
+      document.querySelector(".situation");
+      document.addEventListener("click", currentAnswerListener);
     } catch (error) {
       console.error("Error:", error);
-      document.getElementById("presentation").textContent = "Error";
+      document.getElementById("presentation")!.textContent = "Error";
     }
   }
 
-  function getRandomId(min, max) {
-    return Math.floor(Math.random() * (max - min) + min); //math.floor() round down the number, tbh idk how work, I really think but dont know how limit the rage wtf
-  }
-
-  function correct(data,x) {
-    document.querySelector(".situation")?.addEventListener("click", (e) => {
+  function handleAnswerClick(data, x) {
+    return function (e) {
       if (e.target.matches("#suspicious1, #suspicious2, #suspicious3")) {
-        const selectName = e.target.textContent;
-        console.log(selectName)
-        if(selectName == data[x].correct){
-          nextCase();
+        if (e.target.textContent === data[x].correct) {
+          // Eliminar este listener específico
+          document.querySelector(".situation");
+          document.removeEventListener("click", currentAnswerListener!);
+          // Cargar nuevo caso
+          loadCases(getRandomId(1, 4));
         }
       }
-    });
+    };
   }
 
-  function nextCase() {
-    const $buttonNext = document.querySelector(".next");
-    $buttonNext?.addEventListener("click", () => {
-      let x = getRandomId(1, 4);
-      loadCases(x);
-    });
+  function getRandomId(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
   }
 
-  nextCase();
+  const $buttonNext = document.querySelector(".next");
+  $buttonNext!.addEventListener("click", () => {
+    loadCases(getRandomId(1, 4));
+  });
 
+  //load the first case
+  let currentCaseId;
+  let currentAnswerListener = null;
+  loadCases(getRandomId(1, 4));
 </script>

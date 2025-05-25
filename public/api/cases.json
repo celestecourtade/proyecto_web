@@ -8,18 +8,32 @@
   },
 
   "2": {
-    "title": "add case",
-    "suspicious1": "Miguel (editor)",
-    "suspicious2": "Ana (mejor amiga)",
-    "suspicious3": "Luis (admirador)",
-    "correct": "Miguel (editor)"
+    "title": "Un relojero es hallado muerto en su taller. Pista clave: Todos los relojes marcan las 4:20 excepto uno, y hay virutas de madera de caoba en su ropa.",
+    "suspicious1": "Clara (aprendiz)",
+    "suspicious2": "Roberto (proveedor de maderas)",
+    "suspicious3": "Donato (coleccionista rival)",
+    "correct": "Roberto (proveedor de maderas)"
   },
 
   "3": {
-    "title": "im suffering",
-    "suspicious1": "Miguel (editor)",
-    "suspicious2": "Ana (mejor amiga)",
-    "suspicious3": "Luis (admirador)",
-    "correct": "Luis (admirador)"
+    "title": "Un chef famoso muere por alergia a mariscos. Pista clave: Su último plato era una ensalada César, pero en su cuello hay rastros de salsa tártara.",
+    "suspicious1": "Antonio (sous chef)",
+    "suspicious2": "Marta (crítica gastronómica)",
+    "suspicious3": "Felipe (proveedor de pescados)",
+    "correct": "Felipe (proveedor de pescados)"
+  },
+  "4": {
+    "title": "Un piloto muere en un accidente sospechoso. Pista clave: Las llantas fueron cortadas limpiamente y su reloj muestra marcas de herramientas.",
+    "suspicious1": "Elena (mecánica)",
+    "suspicious2": "Diego (rival)",
+    "suspicious3": "Natalia (esposa)",
+    "correct": "Elena (mecánica)"
+  },
+  "5": {
+    "title": "Un mago muere durante su acto estrella. Pista clave: El truco del agua falló, pero su guante izquierdo está completamente seco.",
+    "suspicious1": "Hugo (asistente)",
+    "suspicious2": "Valeria (esposa y compañera)",
+    "suspicious3": "Renato (rival)",
+    "correct": "Valeria (esposa y compañera)"
   }
 }
