@@ -1,19 +1,39 @@
 {
-  "1" : {
-  "title": "Una poeta muere envenenada. En su mano hay una carta con las palabras: El que busca la verdad, encuentra la muerte",
-  "suspicious1": "Miguel (editor)",
-  "suspicious2": "Ana (mejor amiga)",
-  "suspicious3": "Luis (admirador)",
-  "clue": "La víctima era zurda, pero la carta estaba en su mano derecha."
+  "1": {
+    "title": "Una poeta muere envenenada. En su mano hay una carta con las palabras: El que busca la verdad, encuentra la muerte La víctima era zurda, pero la carta estaba en su mano derecha.",
+    "suspicious1": "Miguel (editor)",
+    "suspicious2": "Ana (mejor amiga)",
+    "suspicious3": "Luis (admirador)",
+    "correct": "Ana (mejor amiga)"
   },
 
-  "2" : {
-  "title": "example2",
-  "victim": "pepe"
+  "2": {
+    "title": "Un relojero es hallado muerto en su taller. Pista clave: Todos los relojes marcan las 4:20 excepto uno, y hay virutas de madera de caoba en su ropa.",
+    "suspicious1": "Clara (aprendiz)",
+    "suspicious2": "Roberto (proveedor de maderas)",
+    "suspicious3": "Donato (coleccionista rival)",
+    "correct": "Roberto (proveedor de maderas)"
   },
 
-  "3" : {
-  "title": "example3",
-  "victim": "kill-me"
+  "3": {
+    "title": "Un chef famoso muere por alergia a mariscos. Pista clave: Su último plato era una ensalada César, pero en su cuello hay rastros de salsa tártara.",
+    "suspicious1": "Antonio (sous chef)",
+    "suspicious2": "Marta (crítica gastronómica)",
+    "suspicious3": "Felipe (proveedor de pescados)",
+    "correct": "Felipe (proveedor de pescados)"
+  },
+  "4": {
+    "title": "Un piloto muere en un accidente sospechoso. Pista clave: Las llantas fueron cortadas limpiamente y su reloj muestra marcas de herramientas.",
+    "suspicious1": "Elena (mecánica)",
+    "suspicious2": "Diego (rival)",
+    "suspicious3": "Natalia (esposa)",
+    "correct": "Elena (mecánica)"
+  },
+  "5": {
+    "title": "Un mago muere durante su acto estrella. Pista clave: El truco del agua falló, pero su guante izquierdo está completamente seco.",
+    "suspicious1": "Hugo (asistente)",
+    "suspicious2": "Valeria (esposa y compañera)",
+    "suspicious3": "Renato (rival)",
+    "correct": "Valeria (esposa y compañera)"
   }
 }
