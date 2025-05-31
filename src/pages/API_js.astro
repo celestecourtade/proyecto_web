@@ -17,10 +17,15 @@ import Layout from "../layouts/Layout.astro";
       <br />
       <button class="next">Siguiente</button>
     </section>
+    <audio autoplay loop>
+      <source src="../public/music/audio8Bits.mp3" />
+    </audio>
   </main>
 </Layout>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
   * {
     box-sizing: border-box;
     padding: 0;
@@ -33,6 +38,8 @@ import Layout from "../layouts/Layout.astro";
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    font-family: "Press Start 2P", cursive;
+    font-size: 1.5rem;
   }
 
   .situation {
@@ -70,12 +77,18 @@ import Layout from "../layouts/Layout.astro";
     margin-top: 10px;
   }
 
+  #suspicious1:hover,
+  #suspicious2:hover,
+  #suspicious3:hover,
   .next:hover {
     color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+  
 </style>
 <script>
-  async function loadCases(x : number) {
+  async function loadCases(x: number) {
     try {
       const response = await fetch("/api/cases.json");
       const data = await response.json();
@@ -102,27 +115,27 @@ import Layout from "../layouts/Layout.astro";
     }
   }
 
-  function handleAnswerClick(data : any, x : number) {
-    return function (e : MouseEvent) {
+  function handleAnswerClick(data: any, x: number) {
+    return function (e: MouseEvent) {
       if (e.target!.matches("#suspicious1, #suspicious2, #suspicious3")) {
         if (e.target!.textContent === data[x].correct) {
           //4... Eliminar este listener específico
           document.querySelector(".situation");
           document.removeEventListener("click", currentAnswerListener!);
           //5... Cargar nuevo caso
-          loadCases(getRandomId(1, 4));
+          loadCases(getRandomId(1, 21));
         }
       }
     };
   }
 
-  function getRandomId(min : number, max : number) {
+  function getRandomId(min: number, max: number) {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
   const $buttonNext = document.querySelector(".next");
   $buttonNext!.addEventListener("click", () => {
-    loadCases(getRandomId(1, 4));
+    loadCases(getRandomId(1, 21));
   });
 
   //1....load the first case

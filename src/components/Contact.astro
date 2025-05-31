@@ -1,12 +1,16 @@
 <div class="popup-container left-align" id="popup">
   <div class="popup-card">
-    <div class="popup-title">Contáctanos</div>
-    <form class="popup-form" id="loginForm">
-      <input class="popup-input" name="email" placeholder="Email" required />
-      <input class="popup-input" name="password" placeholder="Contraseña" required />
-      <textarea class="popup-input" name="mensaje" placeholder="Mensaje..."></textarea>
-      <button class="popup-button" type="submit">Enviar</button>
+   <div class="popup-title">Contáctanos</div>
+    <form class="popup-form" id="contactForm">
+       <button type="button" class="exit">×</button>
+      <input class="popup-input" name="name" id="nameInput" placeholder="Nombre Completo"  />
+      <input class="popup-input" name="email" placeholder="Email" id="emailInput"  />
+      <textarea class="popup-input" name="mensaje" id="messageInput" placeholder="Mensaje..."></textarea>
+      <button class="popup-button" type="submit" >Enviar</button>
     </form>
+      <div style="min-height: 24px; text-align: center;">
+        <span class="errorMessage" id="error"></span>
+      </div>
   </div>
 </div>
 
@@ -99,4 +103,81 @@
     transform: translate(2px, 2px);
     box-shadow: 0 0 #333;
   }
+
+  .errorMessage {
+    color: rgb(2, 55, 63);
+    font-size: 7px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .errorMessage.shake {
+    animation: shake 0.4s ease;
+  }
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+ }
+
+ .exit {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #000;
+    top: 10px;
+    right: 15px;
+  }
+
+  .exit:hover {
+    color: rgb(2, 55, 63);
+  }	
 </style>
+
+<script is:inline>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('emailInput').value.trim();
+    const name = document.getElementById('nameInput').value.trim();
+    const message = document.getElementById('messageInput').value.trim();
+    const errorElement = document.getElementById('error');
+
+    const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+    let errorMsg = ''; 
+
+    if (!email) {
+      errorMsg = '* El email es obligatorio.';
+      } else if (!emailRegex.test(email)) {
+        errorMsg = '* Por favor, introduzca un email válido.';
+      } else if (!name) {
+        errorMsg = '* Debe ingresar un nombre.';
+      } else if (!message) {
+        errorMsg = '* Debe ingresar un mensaje.';
+    }
+
+
+    if (errorMsg) {
+      errorElement.textContent = errorMsg;
+
+      errorElement.classList.remove('shake'); 
+      void errorElement.offsetWidth;           
+      errorElement.classList.add('shake');
+
+      return;
+    }
+
+    errorElement.textContent = ''; 
+    this.submit(); 
+  });
+
+  document.querySelector('#popup .exit').addEventListener('click', function() {
+  document.getElementById('popup').classList.remove('active');
+});
+
+</script>
