@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout>
     <main>
+      <div class="section__title">
+        <h1 class="title">Personajes</h1>
+      </div>
     <section>
         <div class="container">
           <div class="carousel">
@@ -17,11 +20,11 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="slide-content">
                   <div class="slide-content_left">
-                    <img src="/images/img1.jpg" alt="Personaje 1">
+                    <img src="/images/img1.jpg" alt="Imagen Personaje Leo Vale">
                   </div>
                   <div class="slide-content_right">
-                    <h2>Personaje 1</h2>
-                    <p>Una breve descripción del personaje 1. Historia, personalidad o algún detalle interesante.</p>
+                    <h2>Leo Vale (16 años)</h2>
+                    <p>Interroga testigos con charlas casuales.</p>
                   </div>
                 </figure>
               </li>
@@ -29,11 +32,11 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="slide-content">
                   <div class="slide-content_left">
-                    <img src="/images/img2.jpg" alt="Personaje 2">
+                    <img src="/images/img2.jpg" alt="Imagen Personaje Maxwell Blackwood">
                   </div>
                   <div class="slide-content_right">
-                    <h2>Personaje 2</h2>
-                    <p>Descripción del personaje 2. Puedes contar quién es o qué lo representa.</p>
+                    <h2> Detective Maxwell Blackwood (37 años)</h2>
+                    <p>Usa un anillo de graduación policial (¿para recordar sus ideales perdidos?)...manipula el caso por ambición.</p>
                   </div>
                 </figure>
               </li>
@@ -41,11 +44,11 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="slide-content">
                   <div class="slide-content_left">
-                    <img src="/images/img3.jpg" alt="Personaje 3">
+                    <img src="/images/img3.jpg" alt="Imagen personaje Luke Vale">
                   </div>
                   <div class="slide-content_right">
-                    <h2>Personaje 3</h2>
-                    <p>Descripción del personaje 3. Puedes agregar una frase o contexto.</p>
+                    <h2>Luke Vale (16 años) </h2>
+                    <p>Analiza patrones (¿aprendió de su padre detective?) </p>
                   </div>
                 </figure>
               </li>
@@ -53,11 +56,11 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="slide-content">
                   <div class="slide-content_left">
-                    <img src="/images/img4.jpg" alt="Personaje 4">
+                    <img src="/images/img4.jpg" alt="Imagen Personaje Hugo Boss">
                   </div>
                   <div class="slide-content_right">
-                    <h2>Personaje 4</h2>
-                    <p>Algo interesante sobre este personaje. Historia, características o algo llamativo.</p>
+                    <h2>Hugo Boss (27 años) </h2>
+                    <p>Es un programador, Sospechoso o aliado inesperado?</p>
                   </div>
                 </figure>
               </li>
@@ -65,11 +68,11 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="slide-content">
                   <div class="slide-content_left">
-                    <img src="/images/img3.jpg" alt="Personaje 5">
+                    <img src="/images/img5.jpg" alt="Imagen Personaje Elena Frost">
                   </div>
                   <div class="slide-content_right">
-                    <h2>Personaje 5</h2>
-                    <p>Descripción breve. También podés usar este espacio para una cita o pensamiento.</p>
+                    <h2> Elena Frost (19 años)</h2>
+                    <p>La hermana asesinada. Pelo azul eléctrico como Mateo. Ahora solo queda su diario cifrado, su celular y un hermano que clama justicia.</p>
                   </div>
                 </figure>
               </li>
@@ -77,23 +80,23 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="slide-content">
                   <div class="slide-content_left">
-                    <img src="/images/img4.jpg" alt="Personaje 6">
+                    <img src="/images/img6.jpg" alt="Imagen Personaje Mateo Frost">
                   </div>
                   <div class="slide-content_right">
-                    <h2>Personaje 6</h2>
-                    <p>Una última descripción del personaje. Puede ser emocional, divertida o poética.</p>
+                    <h2>Mateo Frost (20 años) </h2>
+                    <p>El hermano en duelo que busca justicia por su hermana asesinada.</p>
                   </div>
                 </figure>
               </li>
             </ul>
       
             <ul class="carousel__thumbnails">
-              <li><label for="slide-1"><img src="/images/img1.jpg" alt=""></label></li>
-              <li><label for="slide-2"><img src="/images/img2.jpg" alt=""></label></li>
-              <li><label for="slide-3"><img src="/images/img3.jpg" alt=""></label></li>
-              <li><label for="slide-4"><img src="/images/img4.jpg" alt=""></label></li>
-              <li><label for="slide-5"><img src="/images/img3.jpg" alt=""></label></li>
-              <li><label for="slide-6"><img src="/images/img4.jpg" alt=""></label></li>
+              <li><label for="slide-1"><img src="/images/img1.jpg" alt="Imagen Personaje Leo Vale"></label></li>
+              <li><label for="slide-2"><img src="/images/img2.jpg" alt="Imagen Personaje Maxwell Blackwood"></label></li>
+              <li><label for="slide-3"><img src="/images/img3.jpg" alt="Imagen personaje Luke Vale"></label></li>
+              <li><label for="slide-4"><img src="/images/img4.jpg" alt="Imagen Personaje Hugo Boss"></label></li>
+              <li><label for="slide-5"><img src="/images/img5.jpg" alt="Imagen Personaje Elena Frost"></label></li>
+              <li><label for="slide-6"><img src="/images/img6.jpg" alt="Imagen Personaje Mateo Frost"></label></li>
             </ul>
             <button id="prev-btn" aria-label="Anterior">‹</button>
             <button id="next-btn" aria-label="Siguiente">›</button>
@@ -104,7 +107,11 @@ import Layout from '../layouts/Layout.astro';
 </Layout> 
 
 <style>
-    /* Reset y estilos base globales */
+
+  /*URL FONT*/
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  /* Reset y estilos base globales */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -114,6 +121,7 @@ import Layout from '../layouts/Layout.astro';
 }
 
 html, body {
+  font-family: 'Press Start 2P', cursive;
   width: 100%;
   height: 100%;
   background-image: url('/images/background.png');
@@ -123,37 +131,36 @@ html, body {
   background-attachment: fixed;
   color: white;
   overflow-x: hidden;
-  font-family: Arial, sans-serif;
-  font-size: 16px; /* Base para rem */
 }
 
-/* Contenedor principal centrado y con padding */
+.section__title {
+    color: #63d3ed;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+
+}
+
 .container {
- /* max-width: 75rem; 
-  margin-left: auto;
-  margin-right: auto; */
   padding: 1rem 1.5rem;
 }
 
-/* Carousel base (móvil primero) */
 .carousel {
   position: relative;
   overflow: visible;
 }
 
-/* Ocultar radios */
 .carousel input[type="radio"] {
   display: none;
 }
 
-/* Slides list */
 .carousel__slides {
   list-style: none;
   position: relative;
-  height: 25rem; /* Altura base para móvil */
+  height: 25rem; 
 }
 
-/* Cada slide */
 .carousel__slide {
   position: absolute;
   top: 0;
@@ -187,6 +194,7 @@ html, body {
 
 /* Imagen del slide */
 .slide-content_left img {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
   max-width: 18rem;
   height: auto;
   border-radius: 0.75rem;
@@ -195,14 +203,19 @@ html, body {
 
 /* Texto del slide */
 .slide-content_right h2 {
-  font-size: 1.5rem;
-  line-height: 1.2;
+  color:#23bbde;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+
 }
 
 .slide-content_right p {
-  font-size: 1rem;
-  max-width: 90vw;
+  padding-top: 0.4rem;
+  font-size: 0.6rem;
   line-height: 1.5;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+
 }
 
 /* Miniaturas */
@@ -220,6 +233,8 @@ html, body {
   border: 2px solid transparent;
   border-radius: 0.625rem;
   transition: transform 0.8s ease, border-color 0.3s ease;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+
 }
 
 .carousel__thumbnails img:hover {
@@ -234,7 +249,7 @@ html, body {
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.4);
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 2rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
@@ -261,10 +276,10 @@ html, body {
 /* Tablet: 481px a 769px */
 @media (min-width: 481px) and (max-width: 769px) {
 
-
-  .container {
-    padding-top: 4rem;
+  .section__title {
+    font-size: 1rem;
   }
+
 
   .slide-content {
     gap: 2rem;
@@ -276,21 +291,16 @@ html, body {
   }
 
   .slide-content_right h2 {
-    font-size: 1.75rem;
+    font-size: 1rem;
   }
 
   .slide-content_right p {
-    font-size: 1.125rem;
-    max-width: 28rem;
-  }
-
-  .carousel__thumbnails {
-    height: 4rem;
+    font-size: 0.5rem;
   }
 
 
   .carousel__thumbnails img {
-    width: 4rem;
+    width: 4.4rem;
     height: 7rem;
   }
 
@@ -309,9 +319,12 @@ html, body {
   }
 }
 
-/* Desktop: 770px a 1220px */
-@media (min-width: 770px) and (max-width: 1220px) {
-
+/* Desktop: 1220px */
+@media (min-width: 770px) {
+  .section__title {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+  }
 
   .slide-content {
     gap: 2.5rem;
@@ -319,16 +332,22 @@ html, body {
   }
 
   .slide-content_right h2 {
-    font-size: 2rem;
+    font-size: 1.4rem;
+    text-align: center;
   }
 
+  .slide-content_right p {
+    text-align: center;
+    max-width: 40rem;
+
+  }
 
   .carousel__thumbnails {
-    margin: 5rem;
+    margin: 1rem;
   }
 
   .carousel__thumbnails img {
-    width: 5rem;
+    width: 8rem;
     height: 7.5rem;
   }
 
@@ -338,14 +357,13 @@ html, body {
   }
 
   #prev-btn {
-    left: 1.25rem;
+    left: 11rem;
   }
 
   #next-btn {
-    right: 1.25rem;
+    right: 10rem;
   }
 }
-
 </style>
 
 <script>
