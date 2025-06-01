@@ -28,7 +28,7 @@ import Layout from "../layouts/Layout.astro";
         >Siguiente</button
       >
     </section>
-    <audio autoplay loop>
+    <audio autoplay loop >
       <source src="../public/music/audio8Bits.mp3" />
     </audio>
   </main>
@@ -103,22 +103,23 @@ import Layout from "../layouts/Layout.astro";
   }
 </style>
 
-<script>
-  async function loadCases(x: number) {
+<script> 
+  async function loadCases(numberId: number) {
     try {
       const response = await fetch("/api/cases.json");
       const data = await response.json();
 
       // 2... Update the console
       document.getElementById("situation__presentation")!.textContent =
-        data[x].title;
+        data[numberId].title;
       document.getElementById("situation__suspicious1")!.textContent =
-        data[x].suspicious1;
+        data[numberId].suspicious1;
       document.getElementById("situation__suspicious2")!.textContent =
-        data[x].suspicious2;
+        data[numberId].suspicious2;
       document.getElementById("situation__suspicious3")!.textContent =
-        data[x].suspicious3;
-
+        data[numberId].suspicious3;
+      
+      let currentAnswerListener: ((event: MouseEvent) => void) | null = null; // i'm free, with that i won't see the red underlined 
       // 7... delete previous listeners
       if (currentAnswerListener) {
         document.querySelector(".situation");
@@ -126,7 +127,8 @@ import Layout from "../layouts/Layout.astro";
       }
 
       //3... Create a new listener
-      currentAnswerListener = handleAnswerClick(data, x);
+      
+      currentAnswerListener = handleAnswerClick(data, numberId);
       document.querySelector(".situation");
       document.addEventListener("click", currentAnswerListener);
     } catch (error) {
@@ -135,14 +137,15 @@ import Layout from "../layouts/Layout.astro";
     }
   }
 
-  function handleAnswerClick(data: any, x: number) {
-    return function (event: MouseEvent) {
+  function handleAnswerClick(data: any, numberId: number) {
+    return function (event : Event) { //MouseEvent
+      const target = event.target as HTMLElement; //Finally with this I won't see the red thing
       if (
-        event.target!.matches(
+        target.matches(
           "#situation__suspicious1, #situation__suspicious2, #situation__suspicious3"
         )
       ) {
-        if (event.target!.textContent === data[x].correct) {
+        if (target!.textContent === data[numberId].correct) {
           document.querySelector(".situation");
           document.removeEventListener("click", currentAnswerListener!);
           //5... Cargar nuevo caso
@@ -156,12 +159,12 @@ import Layout from "../layouts/Layout.astro";
     return Math.floor(Math.random() * (max - min) + min); //mathFloor round the number
   }
 
+  //1....load the first case
   const $buttonNext = document.querySelector(".situation__button--next");
   $buttonNext!.addEventListener("click", () => {
     loadCases(getRandomId(1, 21));
   });
 
-  //1....load the first case (comentario original)
-  let currentAnswerListener = null;
+  let currentAnswerListener : null;
   // loadCases(getRandomId(1, 21)); //commit that for avoid load the JSON in the beginning
 </script>
