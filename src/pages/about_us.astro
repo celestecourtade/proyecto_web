@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="container">
             <div class="card__container">
                 <article class="card__article">
-                    <img class="card__img" src="/images/Leafeon_Maple_Leaves.png" alt="">
+                    <img class="card__img" src="/images/about_us/valentina_photo.png" alt="">
                     <section class="card__data">
                         <h2 class="card__title">Nombre: Agostina</h2>
                         <span class="card__description">No lo sabemos, pero tiene un pelo muy lindo</span>
@@ -14,7 +14,7 @@ import Layout from '../layouts/Layout.astro';
                 </article>
 
                 <article class="card__article">
-                    <img class="card__img" src="/images/Leafeon_Maple_Leaves.png" alt="">
+                    <img class="card__img" src="/images/about_us/mauro_photo.png" alt="mauro and his duck version">
                     <section class="card__data">
                         <h2 class="card__title">Nombre: Mauro</h2>
                         <span class="card__description">Estudiante de ingeniería adicto a la cafeína (creemos que es un pato)</span>
@@ -22,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
                 </article>
 
                 <article class="card__article">
-                    <img class="card__img" src="/images/Leafeon_Maple_Leaves.png" alt="">
+                    <img class="card__img" src="/images/about_us/valentina_photo.png" alt="">
                     <section class="card__data">
                         <h2 class="card__title">Nombre: Celeste</h2>
                         <span class="card__description">No lo sabemos, pero es muy buena con CSS</span>
@@ -30,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
                 </article>
 
                 <article class="card__article">
-                    <img class="card__img" src="/images/Leafeon_Maple_Leaves.png" alt="">
+                    <img class="card__img" src="/images/about_us/valentina_photo.png" alt="cute leafeon">
                     <section class="card__data">
                         <h2 class="card__title">Nombre: Valentina</h2>
                         <span class="card__description">Estudiante de ingeniería y coleccionista de Pokemon TCG</span>
@@ -38,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
                 </article>
 
                 <article class="card__article">
-                    <img class="card__img" src="images/Leafeon_Maple_Leaves.png" alt="">
+                    <img class="card__img" src="images/about_us/santi_photo.png" alt="">
                     <section class="card__data">
                         <h2 class="card__title">Nombre: Santiago</h2>
                         <span class="card__description">Profesor, programador y esclavo de un gato</span>
@@ -46,7 +46,7 @@ import Layout from '../layouts/Layout.astro';
                 </article>
 
                 <article class="card__article">
-                    <img class="card__img" src="/images/Leafeon_Maple_Leaves.png" alt="">
+                    <img class="card__img" src="/images/about_us/gabi_photo.png" alt="">
                     <section class="card__data">
                         <h2 class="card__title">Nombre: Gabriel</h2>
                         <span class="card__description">Profesor, programador y víctima de cortes de luz</span>
@@ -54,21 +54,30 @@ import Layout from '../layouts/Layout.astro';
                 </article>
             </div>
         </div>
+        <!-- <audio autoplay loop >
+            <source src="/music/audio8Bits.mp3" />
+        </audio> -->
     </main>
 </Layout>
 
 
 <style>
+
+    /*URL FONT*/
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
     *{
         box-sizing: border-box;
         padding: 0;
         margin: 0;
     }
     body{
-        background-image: url(/images/background_mobile_about_us.png);
+        background-image: url(/images/background/background_mobile_about_us.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
+        font-family: "Press Start 2P", cursive;
+        font-size: 1rem;
     }
 
     img {
@@ -196,7 +205,7 @@ import Layout from '../layouts/Layout.astro';
     @media (min-width: 770px) {
 
         body{
-            background-image: url(/images/BlackCatWindowGazing.png);
+            background-image: url(/images/background/background_pc_about_us.png);
             background-position: center;
             background-attachment: fixed;
         }
