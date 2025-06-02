@@ -3,8 +3,10 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout>
     <main>
-      <div class="section__title">
-        <h1 class="title">Personajes</h1>
+      <div class="section">
+        <div class="section__title">
+          <h1 class="section__title-text">Personajes</h1>
+        </div>
       </div>
     <section>
         <div class="container">
@@ -18,11 +20,11 @@ import Layout from '../layouts/Layout.astro';
       
             <ul class="carousel__slides">
               <li class="carousel__slide">
-                <figure class="slide-content">
-                  <div class="slide-content_left">
+                <figure class="carousel__slide-content">
+                  <div class="carousel__slide-content-left">
                     <img src="/images/img1.jpg" alt="Imagen Personaje Leo Vale">
                   </div>
-                  <div class="slide-content_right">
+                  <div class="carousel__slide-content-right">
                     <h2>Leo Vale (16 años)</h2>
                     <p>Interroga testigos con charlas casuales.</p>
                   </div>
@@ -30,11 +32,11 @@ import Layout from '../layouts/Layout.astro';
               </li>
       
               <li class="carousel__slide">
-                <figure class="slide-content">
-                  <div class="slide-content_left">
+                <figure class="carousel__slide-content">
+                  <div class="carousel__slide-content-left">
                     <img src="/images/img2.jpg" alt="Imagen Personaje Maxwell Blackwood">
                   </div>
-                  <div class="slide-content_right">
+                  <div class="carousel__slide-content-right">
                     <h2> Detective Maxwell Blackwood (37 años)</h2>
                     <p>Usa un anillo de graduación policial (¿para recordar sus ideales perdidos?)...manipula el caso por ambición.</p>
                   </div>
@@ -42,11 +44,11 @@ import Layout from '../layouts/Layout.astro';
               </li>
       
               <li class="carousel__slide">
-                <figure class="slide-content">
-                  <div class="slide-content_left">
+                <figure class="carousel__slide-content">
+                  <div class="carousel__slide-content-left">
                     <img src="/images/img3.jpg" alt="Imagen personaje Luke Vale">
                   </div>
-                  <div class="slide-content_right">
+                  <div class="carousel__slide-content-right">
                     <h2>Luke Vale (16 años) </h2>
                     <p>Analiza patrones (¿aprendió de su padre detective?) </p>
                   </div>
@@ -54,11 +56,11 @@ import Layout from '../layouts/Layout.astro';
               </li>
       
               <li class="carousel__slide">
-                <figure class="slide-content">
-                  <div class="slide-content_left">
+                <figure class="carousel__slide-content">
+                  <div class="carousel__slide-content-left">
                     <img src="/images/img4.jpg" alt="Imagen Personaje Hugo Boss">
                   </div>
-                  <div class="slide-content_right">
+                  <div class="carousel__slide-content-right">
                     <h2>Hugo Boss (27 años) </h2>
                     <p>Es un programador, Sospechoso o aliado inesperado?</p>
                   </div>
@@ -66,11 +68,11 @@ import Layout from '../layouts/Layout.astro';
               </li>
       
               <li class="carousel__slide">
-                <figure class="slide-content">
-                  <div class="slide-content_left">
+                <figure class="carousel__slide-content">
+                  <div class="carousel__slide-content-left">
                     <img src="/images/img5.jpg" alt="Imagen Personaje Elena Frost">
                   </div>
-                  <div class="slide-content_right">
+                  <div class="carousel__slide-content-right">
                     <h2> Elena Frost (19 años)</h2>
                     <p>La hermana asesinada. Pelo azul eléctrico como Mateo. Ahora solo queda su diario cifrado, su celular y un hermano que clama justicia.</p>
                   </div>
@@ -78,11 +80,11 @@ import Layout from '../layouts/Layout.astro';
               </li>
       
               <li class="carousel__slide">
-                <figure class="slide-content">
-                  <div class="slide-content_left">
+                <figure class="carousel__slide-content">
+                  <div class="carousel__slide-content-left">
                     <img src="/images/img6.jpg" alt="Imagen Personaje Mateo Frost">
                   </div>
-                  <div class="slide-content_right">
+                  <div class="carousel__slide-content-right">
                     <h2>Mateo Frost (20 años) </h2>
                     <p>El hermano en duelo que busca justicia por su hermana asesinada.</p>
                   </div>
@@ -183,7 +185,7 @@ html, body {
 }
 
 /* Contenido del slide - Móvil: columna centrada */
-.slide-content {
+.carousel__slide-content {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -193,7 +195,7 @@ html, body {
 }
 
 /* Imagen del slide */
-.slide-content_left img {
+.carousel__slide-content-left img {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
   max-width: 18rem;
   height: auto;
@@ -202,7 +204,7 @@ html, body {
 }
 
 /* Texto del slide */
-.slide-content_right h2 {
+.carousel__slide-content-right h2 {
   color:#23bbde;
   font-size: 1rem;
   line-height: 1.2rem;
@@ -210,7 +212,7 @@ html, body {
 
 }
 
-.slide-content_right p {
+.carousel__slide-content-right p {
   padding-top: 0.4rem;
   font-size: 0.6rem;
   line-height: 1.5;
@@ -281,20 +283,20 @@ html, body {
   }
 
 
-  .slide-content {
+  .carousel__slide-content {
     gap: 2rem;
     padding: 1.5rem;
   }
 
-  .slide-content_left img {
+  .carousel__slide-content-left img {
     max-width: 15rem;
   }
 
-  .slide-content_right h2 {
+  .carousel__slide-content-right h2 {
     font-size: 1rem;
   }
 
-  .slide-content_right p {
+  .carousel__slide-content-right p {
     font-size: 0.5rem;
   }
 
@@ -326,17 +328,17 @@ html, body {
     padding-top: 1rem;
   }
 
-  .slide-content {
+  .carousel__slide-content {
     gap: 2.5rem;
     padding: 2rem;
   }
 
-  .slide-content_right h2 {
+  .carousel__slide-content-right h2 {
     font-size: 1.4rem;
     text-align: center;
   }
 
-  .slide-content_right p {
+  .carousel__slide-content-right p {
     text-align: center;
     max-width: 40rem;
 
