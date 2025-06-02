@@ -1,15 +1,15 @@
 <div class="popup-container left-align" id="popup">
-  <div class="popup-card">
-   <div class="popup-title">Contáctanos</div>
-    <form class="popup-form" id="contactForm">
-       <button type="button" class="exit">×</button>
-      <input class="popup-input" name="name" id="nameInput" placeholder="Nombre Completo"  />
-      <input class="popup-input" name="email" placeholder="Email" id="emailInput"  />
-      <textarea class="popup-input" name="mensaje" id="messageInput" placeholder="Mensaje..."></textarea>
-      <button class="popup-button" type="submit" >Enviar</button>
+  <div class="popup__card">
+   <div class="popup__title">Contáctanos</div>
+    <form class="popup__form" id="contactForm">
+       <button type="button" class="popup__exit">×</button>
+      <input class="popup__input" name="name" id="nameInput" placeholder="Nombre Completo"  />
+      <input class="popup__input" name="email" placeholder="Email" id="emailInput"  />
+      <textarea class="popup__input" name="mensaje" id="messageInput" placeholder="Mensaje..."></textarea>
+      <button class="popup__button" type="submit" >Enviar</button>
     </form>
       <div style="min-height: 24px; text-align: center;">
-        <span class="errorMessage" id="error"></span>
+        <span class="popup__error-message" id="error"></span>
       </div>
   </div>
 </div>
@@ -23,7 +23,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.6);
+    background: oklch(0 0 0 / 60%);
     display: none; /* Oculto por defecto */
     align-items: center;
     justify-content: center;
@@ -40,12 +40,12 @@
     justify-content: flex-start;
   }
 
-  .popup-card {
+  .popup__card {
     background-color: oklch(0.9456 0.013 185.09 / 68.58%);
     padding: 40px 20px;
     border-radius: 20px;
-    border: 2px solid #333;
-    box-shadow: 6px 6px #000000;
+    border: 2px solid oklch(0.3211 0 0);
+    box-shadow: 6px 6px oklch(0 0 0);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,44 +54,44 @@
     box-sizing: border-box;
   }
 
-  .popup-title {
+  .popup__title {
     font-family: 'Roboto Serif', serif;
     font-size: 20px;
     font-weight: bold;
-    color: #000;
+    color: oklch(0 0 0);
     text-align: center;
     margin-bottom: 25px;
     padding-bottom: 10px;
   }
 
-  .popup-form {
+  .popup__form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: 100%;
   }
 
-  .popup-input {
+  .popup__input {
     width: 90%;
     margin: 0 auto;
     padding: 12px;
     font-size: 17px;
     border-radius: 6px;
-    border: 2px solid #333;
-    box-shadow: 3px 3px #333;
+    border: 2px solid oklch(0.3211 0 0);
+    box-shadow: 3px 3px oklch(0.3211 0 0);
     resize: none;
     font-family: "Courier New", Courier, monospace;
     box-sizing: border-box;
   }
 
-  .popup-button {
+  .popup__button {
     width: 100%;
     padding: 12px;
-    background-color: #fff;
+    background-color: oklch(1 0 0);
     font-weight: bold;
     border-radius: 10px;
-    border: 2px solid #333;
-    box-shadow: 3px 3px #333;
+    border: 2px solid oklch(0.3211 0 0);
+    box-shadow: 3px 3px oklch(0.3211 0 0);
     cursor: pointer;
     transition: transform 0.1s;
     font-family: 'Roboto Serif', serif;
@@ -99,20 +99,20 @@
     font-size: 18px;
   }
 
-  .popup-button:active {
+  .popup__button:active {
     transform: translate(2px, 2px);
-    box-shadow: 0 0 #333;
+    box-shadow: 0 0 oklch(0.3211 0 0);
   }
 
-  .errorMessage {
-    color: rgb(2, 55, 63);
+  .popup__error-message {
+    color: oklch(0.3093 0.0524 210.79);
     font-size: 7px;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
     display: inline-block;
   }
 
-  .errorMessage.shake {
+  .popup__error-message.shake {
     animation: shake 0.4s ease;
   }
 
@@ -124,16 +124,16 @@
     100% { transform: translateX(0); }
  }
 
- .exit {
+ .popup__exit {
     background: none;
     border: none;
     font-size: 24px;
-    color: #000;
+    color: oklch(0 0 0);
     top: 10px;
     right: 15px;
   }
 
-  .exit:hover {
+  .popup__exit:hover {
     color: rgb(2, 55, 63);
   }	
 </style>
@@ -153,12 +153,14 @@
 
     if (!email) {
       errorMsg = '* El email es obligatorio.';
-      } else if (!emailRegex.test(email)) {
-        errorMsg = '* Por favor, introduzca un email válido.';
-      } else if (!name) {
-        errorMsg = '* Debe ingresar un nombre.';
-      } else if (!message) {
-        errorMsg = '* Debe ingresar un mensaje.';
+    } else if (!emailRegex.test(email)) {
+      errorMsg = '* Por favor, introduzca un email válido.';
+    } else if (!name) {
+      errorMsg = '* Debe ingresar su nombre.';
+    } else if (name.trim().split(' ').length < 2) {
+      errorMsg = '* Ingrese su nombre completo.';
+    } else if (!message) {
+      errorMsg = '* Debe ingresar su mensaje.';
     }
 
 
@@ -176,7 +178,7 @@
     this.submit(); 
   });
 
-  document.querySelector('#popup .exit').addEventListener('click', function() {
+  document.querySelector('#popup .popup__exit').addEventListener('click', function() {
   document.getElementById('popup').classList.remove('active');
 });
 
