@@ -1,6 +1,6 @@
 ---
-import Contact from '../components/Contact.astro';
-import Layout from '../layouts/Layout.astro';
+import Contact from "../components/Contact.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
@@ -16,28 +16,36 @@ import Layout from '../layouts/Layout.astro';
       <button class="contactButton">
         Contactános
         <div class="iconButton">
-          <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            height="24"
+            width="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path d="M0 0h24v24H0z" fill="none"></path>
             <path
               d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-              fill="currentColor"
-            ></path>
+              fill="currentColor"></path>
           </svg>
         </div>
       </button>
 
       <Contact />
-
     </body>
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-      html, body {
+      html,
+      body {
         height: 100%;
         margin: 0;
         padding: 0;
         overflow: hidden;
+
+        display: grid;
+        min-height: 100vh !important;
+        grid-template-rows: auto 1fr auto;
       }
 
       .video-background {
@@ -48,13 +56,13 @@ import Layout from '../layouts/Layout.astro';
         height: 120%;
         object-fit: cover;
         z-index: -1;
-        object-position: 70% center; 
+        object-position: 70% center;
       }
 
       .contactButton {
         background: #f7df037a;
         color: white;
-        font-family: 'Press Start 2P', cursive;
+        font-family: "Press Start 2P", cursive;
         padding: 0.45em 3em 0.45em 1em;
         font-size: 14px;
         border-radius: 0.9em;

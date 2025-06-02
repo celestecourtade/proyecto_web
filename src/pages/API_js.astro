@@ -27,8 +27,23 @@ import Layout from "../layouts/Layout.astro";
       <button id="nextButton" class="situation__button situation__button--next"
         >Siguiente</button
       >
+      <!---------------------------------------------------------------------------------------------------- -->
+      <div class="Character">
+        <img
+          class="Character_shadow pixelart"
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/21542/DemoRpgCharacterShadow.png"
+          alt="Shadow"
+        />
+
+        <img
+          class="Character_spritesheet pixelart face-down"
+          src="../public/images/whiteC.png"
+          alt="Character"
+        />
+      </div>
+      <!---------------------------------------------------------------------------------------------------- -->
     </section>
-    <audio autoplay loop >
+    <audio autoplay loop>
       <source src="../public/music/audio8Bits.mp3" />
     </audio>
   </main>
@@ -53,11 +68,60 @@ import Layout from "../layouts/Layout.astro";
     background-attachment: fixed;
     font-family: "Press Start 2P", cursive;
     font-size: 1.5rem;
+
+    display: grid;
+    min-height: 100vh !important;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  :root {
+    --pixel-size: 6;
+  }
+
+  .Character {
+    width: calc(30px * var(--pixel-size));
+    height: calc(45px * var(--pixel-size));
+    overflow: hidden;
+    position: relative;
+    margin: 0em auto;
+  }
+
+  .Character_spritesheet {
+    animation: moveSpritesheet 1s steps(4) infinite;
+    width: calc(128px * var(--pixel-size));
+    position: absolute;
+  }
+  .Character_shadow {
+    position: absolute;
+    width: calc(32px * var(--pixel-size));
+    height: calc(32px * var(--pixel-size));
+  }
+
+  .pixelart {
+    image-rendering: pixelated;
+  }
+
+  .face-right {
+    top: calc(-32px * var(--pixel-size));
+  }
+  .face-up {
+    top: calc(-64px * var(--pixel-size));
+  }
+  .face-left {
+    top: calc(-96px * var(--pixel-size));
+  }
+
+  @keyframes moveSpritesheet {
+    from {
+      transform: translate3d(0px, 0, 0);
+    }
+    to {
+      transform: translate3d(-100%, 0, 0);
+    }
   }
 
   /* Block */
   .situation {
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,9 +165,87 @@ import Layout from "../layouts/Layout.astro";
     transform: scale(1.05);
     box-shadow: 0 4px 8px oklch(0.1147 0.0197 194);
   }
+
+  /* breakpoint tablet */
+  @media (min-width: 481px) {
+    :root {
+      --pixel-size: 4;
+    }
+    .situation {
+      display: grid;
+      grid-template-areas:
+        "title  title"
+        "suspect1 suspect2"
+        "suspect3 next";
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    #situation__presentation {
+      grid-area: title;
+    }
+    #situation__suspicious1 {
+      grid-area: suspect1;
+    }
+    #situation__suspicious2 {
+      grid-area: suspect2;
+    }
+    #situation__suspicious3 {
+      grid-area: suspect3;
+    }
+    #nextButton {
+      grid-area: next;
+      paddint-top: 5px;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .situation__presentation {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      padding: 1.2rem;
+    }
+
+    .Character {
+      margin: 0rem auto;
+    }
+  }
+
+  /* breakpoint desktop */
+  @media (min-width: 770px) {
+    :root {
+      --pixel-size: 6; 
+    }
+
+    .situation {
+      grid-template-areas:
+        "title title title"
+        "suspect1 suspect2 suspect3"
+        ". next .";
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+
+    .situation__suspect:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 6px 12px oklch(0.2221 0.0296 232.94);
+    }
+
+    body {
+      background-position: center 30%;
+      background-size: cover;
+    }
+
+    .Character {
+      position: fixed;
+      right: 5%;
+      bottom: 5%;
+      z-index: 10;
+    }
+  }
 </style>
 
-<script> 
+<script>
   async function loadCases(numberId: number) {
     try {
       const response = await fetch("/api/cases.json");
@@ -118,8 +260,8 @@ import Layout from "../layouts/Layout.astro";
         data[numberId].suspicious2;
       document.getElementById("situation__suspicious3")!.textContent =
         data[numberId].suspicious3;
-      
-      let currentAnswerListener: ((event: MouseEvent) => void) | null = null; // i'm free, with that i won't see the red underlined 
+
+      let currentAnswerListener: ((event: MouseEvent) => void) | null = null; // i'm free, with that i won't see the red underlined
       // 7... delete previous listeners
       if (currentAnswerListener) {
         document.querySelector(".situation");
@@ -127,7 +269,7 @@ import Layout from "../layouts/Layout.astro";
       }
 
       //3... Create a new listener
-      
+
       currentAnswerListener = handleAnswerClick(data, numberId);
       document.querySelector(".situation");
       document.addEventListener("click", currentAnswerListener);
@@ -138,7 +280,8 @@ import Layout from "../layouts/Layout.astro";
   }
 
   function handleAnswerClick(data: any, numberId: number) {
-    return function (event : Event) { //MouseEvent
+    return function (event: Event) {
+      //MouseEvent
       const target = event.target as HTMLElement; //Finally with this I won't see the red thing
       if (
         target.matches(
@@ -165,6 +308,6 @@ import Layout from "../layouts/Layout.astro";
     loadCases(getRandomId(1, 21));
   });
 
-  let currentAnswerListener : null;
+  let currentAnswerListener: null;
   // loadCases(getRandomId(1, 21)); //commit that for avoid load the JSON in the beginning
 </script>
