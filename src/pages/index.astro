@@ -4,46 +4,50 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <html lang="es">
-    <head>
-      <meta charset="UTF-8" />
-    </head>
-    <body>
-      <video autoplay muted loop class="video__background">
-        <source src="/images/index_video.mp4" type="video/mp4" />
-      </video>
+  <section>
+    <video autoplay muted loop class="video__background">
+      <source src="/images/index_video.mp4" type="video/mp4" />
+    </video>
+  </section>
 
-      <button class="contact__Button">
-        Contactános
-        <div class="icon__Button">
-          <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path
-              d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-              fill="currentColor"></path>
-          </svg>
-        </div>
-      </button>
+  <section>
+    <Contact />
+  </section>
 
-      <Contact />
-    </body>
+  <section >
+    <p id="gameDescription" class="game__description"></p>
+  </section>
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+  <section>
+    <button class="contact__Button">
+      Contactános
+      <div class="icon__Button">
+        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+            fill="currentColor"></path>
+        </svg>
+      </div>
+    </button>
+  </section>
+</Layout>
 
-      html,
-      body {
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+    html,
+    body {
         height: 100%;
         margin: 0;
         padding: 0;
         overflow: hidden;
-
         display: grid;
         min-height: 100vh !important;
         grid-template-rows: auto 1fr auto;
-      }
+    }
 
-      .video__background {
+    .video__background {
         position: fixed;
         top: 0;
         left: 0;
@@ -52,9 +56,26 @@ import Layout from "../layouts/Layout.astro";
         object-fit: cover;
         z-index: -1;
         object-position: 70% center;
-      }
+    }
 
-      .contact__Button {
+    .game__description {
+        font-family: 'Press Start 2P', cursive;
+        color: oklch(1 0 0); 
+        background-color: oklch(0 0 0 / 0.6); 
+        text-shadow: 0 0 4px oklch(0.5 0 0);
+        padding: 2em 2em;
+        border-radius: 1em;
+        max-width: 900px;
+        margin: 20vh auto 0 4vw;
+        line-height: 2;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .contact__Button {
+        position: fixed;
+        bottom: 1rem;
+        right: 0.5rem;
         background: oklch(0.8954 0.1868 101.49 / 47.84%);
         color: oklch(1 0 0);
         font-family: 'Press Start 2P', cursive;
@@ -68,12 +89,9 @@ import Layout from "../layouts/Layout.astro";
         align-items: center;
         box-shadow: inset 0 0 1.6em -0.6em oklch(0.8954 0.1868 101.49 / 47.84%);
         height: 2.8em;
-        justify-content: right;
-        margin-top: 80vh;
-        float: right;
-      }
+    }
 
-      .icon__Button {
+    .icon__Button {
         margin-left: 1em;
         position: absolute;
         display: flex;
@@ -85,30 +103,76 @@ import Layout from "../layouts/Layout.astro";
         box-shadow: 0.1em 0.1em 0.6em 0.2em oklch(0.8797 0.0305 277.56);
         right: 0.3em;
         transition: all 0.3s;
-      }
+    }
 
-      .contact__Button:hover {
+    .contact__Button:hover {
         transform: translate(-0.05em, -0.05em);
         box-shadow: 0.15em 0.15em oklch(0.4383 0.1553 25.05 / 20%);
-      }
+    }
 
-      .contact__Button:active {
+    .contact__Button:active {
         transform: translate(0.05em, 0.05em);
         box-shadow: 0.05em 0.05em oklch(0.543 0.1437 272.85);
-      }
-    </style>
+    }
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
+    @media (max-width: 769px) {
+        .game__description {
+            font-size: 10px;
+            padding: 1.5em;
+            line-height: 1.6;
+        }
+        .contact__Button {
+            font-size: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .game__description {
+            font-size: 8px;
+            padding: 1em;
+            line-height: 1.4;
+        }
+        .contact__Button {
+            font-size: 10px;
+        }
+    }
+</style>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Manejo del botón y popup
         const btn = document.querySelector(".contact__Button");
         const popup = document.getElementById("popup");
 
         if (btn && popup) {
-          btn.addEventListener("click", () => {
-            popup.classList.add("active");
-          });
+            btn.addEventListener("click", () => {
+                popup.classList.add("active");
+            });
         }
-      });
-    </script>
-  </html>
+
+        // Animación de escritura (typewriter)
+        const text = `En un oscuro y claustrofóbico vagón de tren, un asesinato sacude a los pasajeros: una joven ha sido brutalmente 
+        asesinada, y el culpable sigue entre ustedes. Como detective, deberás interrogar a los sospechosos, analizar pistas ocultas y 
+        desentrañar sus secretos antes de que el tren llegue a su destino. Cada decisión cuenta, y un error podría dejar escapar al asesino... 
+        ¿Podrás resolver el crimen a tiempo? Explora un vagón retro de los años 40, donde cada pasajero esconde algo que decir... 
+        y algo que ocultar.`;
+
+        const element = document.getElementById("gameDescription");
+        if (!element) return;
+
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 30);
+            }
+        }
+
+        typeWriter();
+    });
+</script>
+
+</html>
 </Layout>
