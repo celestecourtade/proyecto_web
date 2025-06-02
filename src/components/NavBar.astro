@@ -1,6 +1,6 @@
 <nav class="nav">
-  <button class="menu-toggle" onclick="document.querySelector('.nav-list').classList.toggle('open')">☰</button>
-  <ul class="nav-list">
+  <button class="nav__toggle" onclick="document.querySelector('.nav__list').classList.toggle('open')">☰</button>
+  <ul class="nav__list">
     <li><a href="/">🏠 Inicio</a></li>
     <li><a href="/characters_story">🖼️ Personajes</a></li>
     <li><a href="/API_js">🛠️ API idea</a></li>
@@ -20,10 +20,10 @@
     font-family: 'Press Start 2P', cursive;
   }
 
-  .menu-toggle {
+  .nav__toggle {
     background: none;
-    border: 2px solid #000000;
-    color: #000000;
+    border: 2px solid oklch(0 0 0);
+    color: oklch(0 0 0);
     font-size: 1.5rem;
     padding: 2px 2px;
     cursor: pointer;
@@ -31,7 +31,7 @@
     margin: 0 auto 10px auto;
   }
 
-  .nav-list {
+  .nav__list {
     list-style: none;
     display: none; /* oculto por defecto en mobile */
     flex-direction: column;
@@ -39,7 +39,7 @@
     font-size: 12px;
   }
 
-  .nav-list.open {
+  .nav__list--open {
     display: flex; /* mostrar en mobile */
     align-items: flex-start;
     justify-content: flex-start;
@@ -47,31 +47,31 @@
     padding: 0;
   }
 
-  .nav-list a {
-    color: #fff;
-    background-color: #444;
+  .nav__list a {
+    color: oklch(1 0 0);
+    background-color: oklch(0.3867 0 0);
     padding: 2px 4px;
-    border: 3px solid #000;
+    border: 3px solid oklch(0 0 0);
     text-decoration: none;
     display: inline-block;
   }
 
-  .nav-list a:hover {
-    background-color: rgba(255, 255, 255, 0.63);
-    color: #000;
+  .nav__list a:hover {
+    background-color: oklch(1 0 0 / 63%);
+    color: oklch(0 0 0);
     transform: translateY(-2px);
   }
 
-  .nav-list a:active {
+  .nav__list a:active {
     transform: translateY(3px);
   }
 
   @media (min-width: 770px) and (max-width: 1220px) {
-    .menu-toggle {
+    .nav__toggle {
       display: none;
     }
 
-    .nav-list {
+    .nav__list {
       display: flex; /* mostrar en desktop */
       flex-direction: row;
       justify-content: center;
@@ -84,26 +84,24 @@
 
     }
 
-@media (min-width: 1220px) {
-  .menu-toggle {
-    display: none;
+  @media (min-width: 1221px) {
+    .nav__toggle {
+      display: none;
+    }
+
+    .nav__list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly; 
+      align-items: center;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .nav__list a {
+      font-size: 20px;
+      padding: 7px 24px;
+      border-width: 4px;
+    }
   }
-
-  .nav-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly; 
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .nav-list a {
-    font-size: 20px;
-    padding: 7px 24px;
-    border-width: 4px;
-  }
-}
-
-
 </style>
