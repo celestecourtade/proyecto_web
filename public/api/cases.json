@@ -10,17 +10,17 @@
   "2": {
     "title": "Un relojero es hallado muerto en su taller. Pista clave: Todos los relojes marcan las 4:20 excepto uno, y hay virutas de madera de caoba en su ropa.",
     "suspicious1": "Clara (aprendiz)",
-    "suspicious2": "Roberto (proveedor de maderas)",
-    "suspicious3": "Donato (coleccionista rival)",
-    "correct": "Roberto (proveedor de maderas)"
+    "suspicious2": "Roberto (proveedor)",
+    "suspicious3": "Donato (coleccionista)",
+    "correct": "Roberto (proveedor)"
   },
 
   "3": {
     "title": "Un chef famoso muere por alergia a mariscos. Pista clave: Su último plato era una ensalada César, pero en su cuello hay rastros de salsa tártara.",
     "suspicious1": "Antonio (sous chef)",
-    "suspicious2": "Marta (crítica gastronómica)",
-    "suspicious3": "Felipe (proveedor de pescados)",
-    "correct": "Felipe (proveedor de pescados)"
+    "suspicious2": "Marta (la crítica)",
+    "suspicious3": "Felipe (proveedor)",
+    "correct": "Felipe (proveedor)"
   },
   "4": {
     "title": "Un piloto muere en un accidente sospechoso. Pista clave: Las llantas fueron cortadas limpiamente y su reloj muestra marcas de herramientas.",
@@ -32,8 +32,113 @@
   "5": {
     "title": "Un mago muere durante su acto estrella. Pista clave: El truco del agua falló, pero su guante izquierdo está completamente seco.",
     "suspicious1": "Hugo (asistente)",
-    "suspicious2": "Valeria (esposa y compañera)",
+    "suspicious2": "Valeria (esposa)",
     "suspicious3": "Renato (rival)",
-    "correct": "Valeria (esposa y compañera)"
+    "correct": "Valeria (esposa)"
+  },
+  "6": {
+    "title": "Un bibliotecario es encontrado muerto entre estantes derrumbados. Pista clave: Tenía un libro raro sobre venenos abierto, pero sus gafas de lectura no estaban puestas.",
+    "suspicious1": "Carlos (colega)",
+    "suspicious2": "Isabel (estudiante)",
+    "suspicious3": "Ramón (vendedor)",
+    "correct": "Carlos (colega)"
+  },
+  "7": {
+    "title": "Un jardinero muere por inhalación de pesticida. Pista clave: Sus guantes estaban limpios, pero el recipiente del veneno tenía huellas de tierra fresca.",
+    "suspicious1": "Lucía (vecina)",
+    "suspicious2": "Tomás (ayudante)",
+    "suspicious3": "Elena (dueña)",
+    "correct": "Tomás (ayudante)"
+  },
+  "8": {
+    "title": "Un pintor fallece intoxicado por disolvente. Pista clave: Su última obra era un retrato, pero el modelo real tenía los ojos azules (en el cuadro son verdes).",
+    "suspicious1": "Adriana (crítica)",
+    "suspicious2": "Jorge (modelo)",
+    "suspicious3": "Marina (socia)",
+    "correct": "Jorge (modelo)"
+  },
+  "9": {
+    "title": "Un músico muere electrocutado con su guitarra. Pista clave: El amplificador estaba ajustado al máximo, pero el volumen de sus audífonos era mínimo.",
+    "suspicious1": "Sofía (exnovia)",
+    "suspicious2": "Raúl (técnico de sonido)",
+    "suspicious3": "Carmen (manager)",
+    "correct": "Raúl (técnico de sonido)"
+  },
+  "10": {
+    "title": "Un atleta olímpico muere por sobredosis de estimulantes. Pista clave: Su botella de agua sabía amarga, pero su toalla olía a miel.",
+    "suspicious1": "Víctor (rival)",
+    "suspicious2": "Daniela (nutrióloga)",
+    "suspicious3": "Óscar (entrenador)",
+    "correct": "Daniela (nutrióloga)"
+  },
+  "11": {
+    "title": "Un fotógrafo es hallado muerto en su cuarto oscuro. Pista clave: Las fotos reveladas muestran una escena diferente a la descrita en su cuaderno de notas, y hay un olor a almendras amargas en el aire.",
+    "suspicious1": "Leandro (asistente)",
+    "suspicious2": "Silvia (editora)",
+    "suspicious3": "Mateo (rival)",
+    "correct": "Leandro (asistente)"
+  },
+  "12": {
+    "title": "Un joyero aparece muerto en su taller. Pista clave: Un diamante valioso fue reemplazado por una falsificación, pero el cortador de vidrio está sin usar.",
+    "suspicious1": "Renata (clienta)",
+    "suspicious2": "Héctor (vigilante)",
+    "suspicious3": "Diana (socia)",
+    "correct": "Diana (socia)"
+  },
+  "13": {
+    "title": "Un escalador profesional muere en una caída 'accidental'. Pista clave: Su cuerda tenía cortes limpios, pero su mosquetón estaba intacto.",
+    "suspicious1": "Pablo (compañero)",
+    "suspicious2": "Eva (exnovia)",
+    "suspicious3": "Ricardo (instructor)",
+    "correct": "Pablo (compañero)"
+  },
+  "14": {
+    "title": "Un escritor de misterio muere envenenado. Pista clave: En su máquina de escribir hay una página con las palabras 'EL ASESINO ES…', pero la última letra es una 'A' repetida.",
+    "suspicious1": "Julia (traductora)",
+    "suspicious2": "Alberto (editor)",
+    "suspicious3": "Carmen (esposa)",
+    "correct": "Carmen (esposa)"
+  },
+  "15": {
+    "title": "Un actor muere en escena durante una obra. Pista clave: El arma real fue cambiada por una verdadera, pero el guante del asesino en la obra está manchado con pintura roja.",
+    "suspicious1": "Nicolás (director)",
+    "suspicious2": "Valentina (actriz)",
+    "suspicious3": "Fernando (utilero)",
+    "correct": "Fernando (utilero)"
+  },
+  "16": {
+    "title": "Un científico muere en su laboratorio. Pista clave: Su experimento con gases tóxicos falló, pero su máscara antigás estaba desabrochada.",
+    "suspicious1": "Lucas (becario)",
+    "suspicious2": "Dra. Rojas (colega)",
+    "suspicious3": "Marcos (empresario)",
+    "correct": "Lucas (becario)"
+  },
+  "17": {
+    "title": "Un anticuario es asesinado en su tienda. Pista clave: Un reloj antiguo marca la hora incorrecta (3:15), pero el candelabro cercano tiene cera fresca.",
+    "suspicious1": "Sara (coleccionista)",
+    "suspicious2": "Gabriel (restaurador)",
+    "suspicious3": "Luisa (vecina)",
+    "correct": "Gabriel (restaurador)"
+  },
+  "18": {
+    "title": "Un buzo profesional muere en un arrecife. Pista clave: Su tanque de oxígeno estaba lleno, pero su regulador tenía arena incrustada.",
+    "suspicious1": "Diego (compañero)",
+    "suspicious2": "Claudia (bióloga marina)",
+    "suspicious3": "Javier (instructor)",
+    "correct": "Diego (compañero)"
+  },
+  "19": {
+    "title": "Un cantante de ópera muere tras beber agua en escena. Pista clave: Su vaso tenía residuos de limón, pero él era alérgico a los cítricos.",
+    "suspicious1": "Roberto (maestro)",
+    "suspicious2": "Alicia (corista)",
+    "suspicious3": "Manuel (promotor)",
+    "correct": "Alicia (corista)"
+  },
+  "20": {
+    "title": "Un detective privado es encontrado muerto en su oficina. Pista clave: Su informe final dice 'EL CRIMEN FUE…', pero la siguiente página está arrancada con fuerza.",
+    "suspicious1": "Mario (cliente)",
+    "suspicious2": "Verónica (secretaria)",
+    "suspicious3": "Arturo (policía)",
+    "correct": "Verónica (secretaria)"
   }
 }
