@@ -30,26 +30,29 @@ import Layout from "../layouts/Layout.astro";
       <!---------------------------------------------------------------------------------------------------- -->
       <div class="Character">
         <img
-          class="Character_shadow pixelart"
+          class="Character_shadow pixelart" 
           src="/images/characterAPI/shadowC.png"
           alt="Shadow"
         />
-
+        <!-- it can change the animation with face-down, face-up and face-right :D -->
         <img
-          class="Character_spritesheet pixelart face-down"
+          class="Character_spritesheet pixelart face-down" 
           src="/images/characterAPI/whiteC.png"
           alt="Character"
-        />
+        />  
       </div>
       <!---------------------------------------------------------------------------------------------------- -->
     </section>
-    <audio autoplay loop >
+    <audio autoplay loop>
       <source src="/music/audio8Bits.mp3" />
     </audio>
   </main>
 </Layout>
 
 <style>
+  :root {
+    --pixel-size: 6;
+  }
   @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
   /* Reset */
@@ -72,10 +75,6 @@ import Layout from "../layouts/Layout.astro";
     display: grid;
     min-height: 100vh !important;
     grid-template-rows: auto 1fr auto;
-  }
-
-  :root {
-    --pixel-size: 6;
   }
 
   .Character {
@@ -215,7 +214,7 @@ import Layout from "../layouts/Layout.astro";
   /* breakpoint desktop */
   @media (min-width: 770px) {
     :root {
-      --pixel-size: 6; 
+      --pixel-size: 6;
     }
 
     .situation {
