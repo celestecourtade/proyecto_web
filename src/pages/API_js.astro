@@ -1,5 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+const {
+  sprite = "/images/characterAPI/whiteC.png",
+  shadow = "/images/characterAPI/shadowC.png",
+  initialDirection = "face-down",
+} = Astro.props;
 ---
 
 <Layout>
@@ -29,17 +34,12 @@ import Layout from "../layouts/Layout.astro";
       >
       <!---------------------------------------------------------------------------------------------------- -->
       <div class="Character">
+        <img class="Character_shadow pixelart" src={shadow} alt="Shadow" />
         <img
-          class="Character_shadow pixelart" 
-          src="/images/characterAPI/shadowC.png"
-          alt="Shadow"
-        />
-        <!-- it can change the animation with face-down, face-up and face-right :D -->
-        <img
-          class="Character_spritesheet pixelart face-down" 
-          src="/images/characterAPI/whiteC.png"
+          class={`Character_spritesheet pixelart ${initialDirection}`}
+          src={sprite}
           alt="Character"
-        />  
+        />
       </div>
       <!---------------------------------------------------------------------------------------------------- -->
     </section>
@@ -50,10 +50,11 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
   :root {
     --pixel-size: 6;
   }
-  @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
   /* Reset */
   * {
@@ -76,6 +77,8 @@ import Layout from "../layouts/Layout.astro";
     min-height: 100vh !important;
     grid-template-rows: auto 1fr auto;
   }
+
+  /* character */
 
   .Character {
     width: calc(30px * var(--pixel-size));
