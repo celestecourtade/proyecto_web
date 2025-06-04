@@ -1,6 +1,6 @@
 ---
 import NavBar from '../components/NavBar.astro';
-import Contact from '../components/Contact.astro';
+const { pageTitle = "The Mystery of the Blue Lady" } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -9,7 +9,7 @@ import Contact from '../components/Contact.astro';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>The Mystery of the Blue Lady</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<NavBar/>

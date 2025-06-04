@@ -1,9 +1,13 @@
 ---
 import Contact from "../components/Contact.astro";
 import Layout from "../layouts/Layout.astro";
+const gameTitle = "The Mystery of the Blue Lady";
 ---
-
 <Layout>
+    <section class="game__title">
+        <h1>{gameTitle}</h1>
+    </section>
+
   <section>
     <video autoplay muted loop class="video__background">
       <source src="/images/index_video.mp4" type="video/mp4" />
@@ -47,6 +51,38 @@ import Layout from "../layouts/Layout.astro";
         grid-template-rows: auto 1fr auto;
     }
 
+    .game__title {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 18px;
+        color: oklch(1 0 0);
+        text-align: left;
+        margin: 0 0 1vh 7vw; 
+        position: relative;
+        top: 18vh;
+        animation: wave 2s ease-in-out infinite;
+    }   
+
+    .wave-text span:nth-child(1) {
+        animation-delay: 0s;
+    }
+    .wave-text span:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    .wave-text span:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+    .wave-text span:nth-child(4) {
+        animation-delay: 0.6s;
+    }
+
+    @keyframes wave {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
     .video__background {
         position: fixed;
         top: 0;
