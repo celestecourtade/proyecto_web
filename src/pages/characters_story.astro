@@ -22,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="carousel__slide-content">
                   <div class="carousel__slide-content-left">
-                    <img src="/images/img1.jpg" alt="Imagen Personaje Leo Vale">
+                    <img src="/images/characters_story/leo_vale.jpg" alt="Imagen Personaje Leo Vale">
                   </div>
                   <div class="carousel__slide-content-right">
                     <h2>Leo Vale (16 años)</h2>
@@ -34,7 +34,7 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="carousel__slide-content">
                   <div class="carousel__slide-content-left">
-                    <img src="/images/img2.jpg" alt="Imagen Personaje Maxwell Blackwood">
+                    <img src="/images/characters_story/maxwell_blackwood.jpg" alt="Imagen Personaje Maxwell Blackwood">
                   </div>
                   <div class="carousel__slide-content-right">
                     <h2> Detective Maxwell Blackwood (37 años)</h2>
@@ -46,7 +46,7 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="carousel__slide-content">
                   <div class="carousel__slide-content-left">
-                    <img src="/images/img3.jpg" alt="Imagen personaje Luke Vale">
+                    <img src="/images/characters_story/luke_vale.jpg" alt="Imagen personaje Luke Vale">
                   </div>
                   <div class="carousel__slide-content-right">
                     <h2>Luke Vale (16 años) </h2>
@@ -58,7 +58,7 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="carousel__slide-content">
                   <div class="carousel__slide-content-left">
-                    <img src="/images/img4.jpg" alt="Imagen Personaje Hugo Boss">
+                    <img src="/images/characters_story/hugo_boss.jpg" alt="Imagen Personaje Hugo Boss">
                   </div>
                   <div class="carousel__slide-content-right">
                     <h2>Hugo Boss (27 años) </h2>
@@ -70,7 +70,7 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="carousel__slide-content">
                   <div class="carousel__slide-content-left">
-                    <img src="/images/img5.jpg" alt="Imagen Personaje Elena Frost">
+                    <img src="/images/characters_story/elena_frost.jpg" alt="Imagen Personaje Elena Frost">
                   </div>
                   <div class="carousel__slide-content-right">
                     <h2> Elena Frost (19 años)</h2>
@@ -82,7 +82,7 @@ import Layout from '../layouts/Layout.astro';
               <li class="carousel__slide">
                 <figure class="carousel__slide-content">
                   <div class="carousel__slide-content-left">
-                    <img src="/images/img6.jpg" alt="Imagen Personaje Mateo Frost">
+                    <img src="/images/characters_story/mateo_frost.jpg" alt="Imagen Personaje Mateo Frost">
                   </div>
                   <div class="carousel__slide-content-right">
                     <h2>Mateo Frost (20 años) </h2>
@@ -93,12 +93,12 @@ import Layout from '../layouts/Layout.astro';
             </ul>
       
             <ul class="carousel__thumbnails">
-              <li><label for="slide-1"><img src="/images/img1.jpg" alt="Imagen Personaje Leo Vale"></label></li>
-              <li><label for="slide-2"><img src="/images/img2.jpg" alt="Imagen Personaje Maxwell Blackwood"></label></li>
-              <li><label for="slide-3"><img src="/images/img3.jpg" alt="Imagen personaje Luke Vale"></label></li>
-              <li><label for="slide-4"><img src="/images/img4.jpg" alt="Imagen Personaje Hugo Boss"></label></li>
-              <li><label for="slide-5"><img src="/images/img5.jpg" alt="Imagen Personaje Elena Frost"></label></li>
-              <li><label for="slide-6"><img src="/images/img6.jpg" alt="Imagen Personaje Mateo Frost"></label></li>
+              <li><label for="slide-1"><img src="/images/characters_story/leo_vale.jpg" alt="Imagen Personaje Leo Vale"></label></li>
+              <li><label for="slide-2"><img src="/images/characters_story/maxwell_blackwood.jpg" alt="Imagen Personaje Maxwell Blackwood"></label></li>
+              <li><label for="slide-3"><img src="/images/characters_story/luke_vale.jpg" alt="Imagen personaje Luke Vale"></label></li>
+              <li><label for="slide-4"><img src="/images/characters_story/hugo_boss.jpg" alt="Imagen Personaje Hugo Boss"></label></li>
+              <li><label for="slide-5"><img src="/images/characters_story/elena_frost.jpg" alt="Imagen Personaje Elena Frost"></label></li>
+              <li><label for="slide-6"><img src="/images/characters_story/mateo_frost.jpg" alt="Imagen Personaje Mateo Frost"></label></li>
             </ul>
             <button id="prev-btn" aria-label="Anterior">‹</button>
             <button id="next-btn" aria-label="Siguiente">›</button>
@@ -126,17 +126,17 @@ html, body {
   font-family: 'Press Start 2P', cursive;
   width: 100%;
   height: 100%;
-  background-image: url('/images/background.png');
+  background-image: url('/images/characters_story/background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: white;
+  color: oklch(1 0 0);
   overflow-x: hidden;
 }
 
 .section__title {
-    color: #63d3ed;
+    color: oklch(0.8114 0.1077 215.27);
     padding-bottom: 1rem;
     text-align: center;
     font-size: 0.8rem;
@@ -205,7 +205,7 @@ html, body {
 
 /* Texto del slide */
 .carousel__slide-content-right h2 {
-  color:#23bbde;
+  color:oklch(0.7336 0.1262 218.64);
   font-size: 1rem;
   line-height: 1.2rem;
   text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -241,7 +241,7 @@ html, body {
 
 .carousel__thumbnails img:hover {
   transform: scale(1.05);
-  border-color: #fff;
+  border-color: oklch(1 0 0);
 }
 
 /* Botones next/prev */
@@ -251,7 +251,7 @@ html, body {
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.4);
   border: none;
-  color: rgb(255, 255, 255);
+  color: oklch(1 0 0);
   font-size: 2rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
