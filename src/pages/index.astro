@@ -3,10 +3,11 @@ import Contact from "../components/Contact.astro";
 import Layout from "../layouts/Layout.astro";
 const gameTitle = "The Mystery of the Blue Lady";
 ---
+
 <Layout>
-    <section class="game__title">
-        <h1>{gameTitle}</h1>
-    </section>
+  <section class="game__title">
+    <h1>{gameTitle}</h1>
+  </section>
 
   <section>
     <video autoplay muted loop class="video__background">
@@ -18,15 +19,20 @@ const gameTitle = "The Mystery of the Blue Lady";
     <Contact />
   </section>
 
-  <section >
+  <section>
     <p id="gameDescription" class="game__description"></p>
   </section>
 
   <section>
     <button class="contact__Button">
-      Contactános
+      Contáctanos
       <div class="icon__Button">
-        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          height="24"
+          width="24"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M0 0h24v24H0z" fill="none"></path>
           <path
             d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
@@ -38,177 +44,175 @@ const gameTitle = "The Mystery of the Blue Lady";
 </Layout>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        display: grid;
-        min-height: 100vh !important;
-        grid-template-rows: auto 1fr auto;
-    }
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: grid;
+    min-height: 100vh !important;
+    grid-template-rows: auto 1fr auto;
+  }
 
-    .game__title {
-        font-family: 'Press Start 2P', cursive;
-        font-size: 18px;
-        color: oklch(1 0 0);
-        text-align: left;
-        margin: 0 0 1vh 7vw; 
-        position: relative;
-        top: 18vh;
-        animation: wave 2s ease-in-out infinite;
-    }   
+  .game__title {
+    font-family: "Press Start 2P", cursive;
+    font-size: 18px;
+    color: oklch(1 0 0);
+    text-align: left;
+    margin: 0 0 1vh 7vw;
+    position: relative;
+    top: 18vh;
+    animation: wave 2s ease-in-out infinite;
+  }
 
-    .wave-text span:nth-child(1) {
-        animation-delay: 0s;
-    }
-    .wave-text span:nth-child(2) {
-        animation-delay: 0.2s;
-    }
-    .wave-text span:nth-child(3) {
-        animation-delay: 0.4s;
-    }
-    .wave-text span:nth-child(4) {
-        animation-delay: 0.6s;
-    }
+  .wave-text span:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .wave-text span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .wave-text span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  .wave-text span:nth-child(4) {
+    animation-delay: 0.6s;
+  }
 
-    @keyframes wave {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-20px);
-        }
+  @keyframes wave {
+    0%,
+    100% {
+      transform: translateY(0);
     }
-    .video__background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 120%;
-        object-fit: cover;
-        z-index: -1;
-        object-position: 70% center;
+    50% {
+      transform: translateY(-20px);
     }
+  }
+  .video__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    z-index: -1;
+    object-position: 70% center;
+  }
 
+  .game__description {
+    font-family: "Press Start 2P", cursive;
+    color: oklch(1 0 0);
+    background-color: oklch(0 0 0 / 0.6);
+    text-shadow: 0 0 4px oklch(0.5 0 0);
+    padding: 2em 2em;
+    border-radius: 1em;
+    max-width: 900px;
+    margin: 20vh auto 0 4vw;
+    line-height: 2;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .contact__Button {
+    position: fixed;
+    bottom: 1rem;
+    right: 0.5rem;
+    background: oklch(0.8954 0.1868 101.49 / 47.84%);
+    color: oklch(1 0 0);
+    font-family: "Press Start 2P", cursive;
+    padding: 0.45em 3em 0.45em 1em;
+    font-size: 14px;
+    border-radius: 0.9em;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em oklch(0.8954 0.1868 101.49 / 47.84%);
+    height: 2.8em;
+  }
+
+  .icon__Button {
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em oklch(0.8797 0.0305 277.56);
+    right: 0.3em;
+    transition: all 0.3s;
+  }
+
+  .contact__Button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em oklch(0.4383 0.1553 25.05 / 20%);
+  }
+
+  .contact__Button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em oklch(0.543 0.1437 272.85);
+  }
+
+  @media (max-width: 769px) {
     .game__description {
-        font-family: 'Press Start 2P', cursive;
-        color: oklch(1 0 0); 
-        background-color: oklch(0 0 0 / 0.6); 
-        text-shadow: 0 0 4px oklch(0.5 0 0);
-        padding: 2em 2em;
-        border-radius: 1em;
-        max-width: 900px;
-        margin: 20vh auto 0 4vw;
-        line-height: 2;
-        font-size: 14px;
-        text-align: left;
+      font-size: 11px;
+      padding: 1.5em;
+      line-height: 1.6;
     }
-
     .contact__Button {
-        position: fixed;
-        bottom: 1rem;
-        right: 0.5rem;
-        background: oklch(0.8954 0.1868 101.49 / 47.84%);
-        color: oklch(1 0 0);
-        font-family: 'Press Start 2P', cursive;
-        padding: 0.45em 3em 0.45em 1em;
-        font-size: 14px;
-        border-radius: 0.9em;
-        border: none;
-        cursor: pointer;
-        letter-spacing: 0.05em;
-        display: flex;
-        align-items: center;
-        box-shadow: inset 0 0 1.6em -0.6em oklch(0.8954 0.1868 101.49 / 47.84%);
-        height: 2.8em;
+      font-size: 10px;
     }
+  }
 
-    .icon__Button {
-        margin-left: 1em;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 2.2em;
-        width: 2.2em;
-        border-radius: 0.7em;
-        box-shadow: 0.1em 0.1em 0.6em 0.2em oklch(0.8797 0.0305 277.56);
-        right: 0.3em;
-        transition: all 0.3s;
+  @media (max-width: 480px) {
+    .game__description {
+      font-size: 9px;
+      padding: 1em;
+      line-height: 1.4;
     }
-
-    .contact__Button:hover {
-        transform: translate(-0.05em, -0.05em);
-        box-shadow: 0.15em 0.15em oklch(0.4383 0.1553 25.05 / 20%);
+    .contact__Button {
+      font-size: 10px;
     }
-
-    .contact__Button:active {
-        transform: translate(0.05em, 0.05em);
-        box-shadow: 0.05em 0.05em oklch(0.543 0.1437 272.85);
-    }
-
-    @media (max-width: 769px) {
-        .game__description {
-            font-size: 11px;
-            padding: 1.5em;
-            line-height: 1.6;
-        }
-        .contact__Button {
-            font-size: 10px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .game__description {
-            font-size: 9px;
-            padding: 1em;
-            line-height: 1.4;
-        }
-        .contact__Button {
-            font-size: 10px;
-        }
-    }
+  }
 </style>
 
 <script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-        // Manejo del botón y popup
-        const btn = document.querySelector(".contact__Button");
-        const popup = document.getElementById("popup");
+  document.addEventListener("DOMContentLoaded", () => {
+    // Button and popup handling
+    const btn = document.querySelector(".contact__Button");
+    const popup = document.getElementById("popup");
 
-        if (btn && popup) {
-            btn.addEventListener("click", () => {
-                popup.classList.add("active");
-            });
-        }
+    if (btn && popup) {
+      btn.addEventListener("click", () => {
+        popup.classList.add("active");
+      });
+    }
 
-        // Animación de escritura (typewriter)
-        const text = `En un oscuro y claustrofóbico vagón de tren, un asesinato sacude a los pasajeros: una joven ha sido brutalmente 
+    // Writing animation (typewriter)
+    const text = `En un oscuro y claustrofóbico vagón de tren, un asesinato sacude a los pasajeros: una joven ha sido brutalmente 
         asesinada, y el culpable sigue entre ustedes. Como detective, deberás interrogar a los sospechosos, analizar pistas ocultas y 
         desentrañar sus secretos antes de que el tren llegue a su destino. Cada decisión cuenta, y un error podría dejar escapar al asesino... 
         ¿Podrás resolver el crimen a tiempo? Explora un vagón retro de los años 40, donde cada pasajero esconde algo que decir... 
         y algo que ocultar.`;
 
-        const element = document.getElementById("gameDescription");
-        if (!element) return;
+    const element = document.getElementById("gameDescription");
+    if (!element) return;
 
-        let i = 0;
+    let i = 0;
 
-        function typeWriter() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 30);
-            }
-        }
+    function typeWriter() {
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 30);
+      }
+    }
 
-        typeWriter();
-    });
+    typeWriter();
+  });
 </script>
-
-</html>
-</Layout>

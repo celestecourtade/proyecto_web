@@ -1,402 +1,462 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
+
 <Layout>
-    <main>
-      <div class="section">
-        <div class="section__title">
-          <h1 class="section__title-text">Personajes</h1>
+  <main>
+    <div class="section">
+      <div class="section__title">
+        <h1 class="section__title-text">Personajes</h1>
+      </div>
+    </div>
+    <section>
+      <div class="container">
+        <div class="carousel">
+          <input type="radio" name="slides" checked="checked" id="slide-1" />
+          <input type="radio" name="slides" id="slide-2" />
+          <input type="radio" name="slides" id="slide-3" />
+          <input type="radio" name="slides" id="slide-4" />
+          <input type="radio" name="slides" id="slide-5" />
+          <input type="radio" name="slides" id="slide-6" />
+
+          <ul class="carousel__slides">
+            <li class="carousel__slide">
+              <figure class="carousel__slide-content">
+                <div class="carousel__slide-content-left">
+                  <img
+                    src="/images/characters_story/leo_vale.jpg"
+                    alt="Imagen Personaje Leo Vale"
+                  />
+                </div>
+                <div class="carousel__slide-content-right">
+                  <h2>Leo Vale (16 años)</h2>
+                  <p>Interroga testigos con charlas casuales.</p>
+                </div>
+              </figure>
+            </li>
+
+            <li class="carousel__slide">
+              <figure class="carousel__slide-content">
+                <div class="carousel__slide-content-left">
+                  <img
+                    src="/images/characters_story/maxwell_blackwood.jpg"
+                    alt="Imagen Personaje Maxwell Blackwood"
+                  />
+                </div>
+                <div class="carousel__slide-content-right">
+                  <h2>Detective Maxwell Blackwood (37 años)</h2>
+                  <p>
+                    Usa un anillo de graduación policial (¿para recordar sus
+                    ideales perdidos?)...manipula el caso por ambición.
+                  </p>
+                </div>
+              </figure>
+            </li>
+
+            <li class="carousel__slide">
+              <figure class="carousel__slide-content">
+                <div class="carousel__slide-content-left">
+                  <img
+                    src="/images/characters_story/luke_vale.jpg"
+                    alt="Imagen personaje Luke Vale"
+                  />
+                </div>
+                <div class="carousel__slide-content-right">
+                  <h2>Luke Vale (16 años)</h2>
+                  <p>Analiza patrones (¿aprendió de su padre detective?)</p>
+                </div>
+              </figure>
+            </li>
+
+            <li class="carousel__slide">
+              <figure class="carousel__slide-content">
+                <div class="carousel__slide-content-left">
+                  <img
+                    src="/images/characters_story/hugo_boss.jpg"
+                    alt="Imagen Personaje Hugo Boss"
+                  />
+                </div>
+                <div class="carousel__slide-content-right">
+                  <h2>Hugo Boss (27 años)</h2>
+                  <p>Es un programador, Sospechoso o aliado inesperado?</p>
+                </div>
+              </figure>
+            </li>
+
+            <li class="carousel__slide">
+              <figure class="carousel__slide-content">
+                <div class="carousel__slide-content-left">
+                  <img
+                    src="/images/characters_story/elena_frost.jpg"
+                    alt="Imagen Personaje Elena Frost"
+                  />
+                </div>
+                <div class="carousel__slide-content-right">
+                  <h2>Elena Frost (19 años)</h2>
+                  <p>
+                    La hermana asesinada. Pelo azul eléctrico como Mateo. Ahora
+                    solo queda su diario cifrado, su celular y un hermano que
+                    clama justicia.
+                  </p>
+                </div>
+              </figure>
+            </li>
+
+            <li class="carousel__slide">
+              <figure class="carousel__slide-content">
+                <div class="carousel__slide-content-left">
+                  <img
+                    src="/images/characters_story/mateo_frost.jpg"
+                    alt="Imagen Personaje Mateo Frost"
+                  />
+                </div>
+                <div class="carousel__slide-content-right">
+                  <h2>Mateo Frost (20 años)</h2>
+                  <p>
+                    El hermano en duelo que busca justicia por su hermana
+                    asesinada.
+                  </p>
+                </div>
+              </figure>
+            </li>
+          </ul>
+
+          <ul class="carousel__thumbnails">
+            <li>
+              <label for="slide-1"
+                ><img
+                  src="/images/characters_story/leo_vale.jpg"
+                  alt="Imagen Personaje Leo Vale"
+                /></label>
+            </li>
+            <li>
+              <label for="slide-2"
+                ><img
+                  src="/images/characters_story/maxwell_blackwood.jpg"
+                  alt="Imagen Personaje Maxwell Blackwood"
+                /></label>
+            </li>
+            <li>
+              <label for="slide-3"
+                ><img
+                  src="/images/characters_story/luke_vale.jpg"
+                  alt="Imagen personaje Luke Vale"
+                /></label>
+            </li>
+            <li>
+              <label for="slide-4"
+                ><img
+                  src="/images/characters_story/hugo_boss.jpg"
+                  alt="Imagen Personaje Hugo Boss"
+                /></label>
+            </li>
+            <li>
+              <label for="slide-5"
+                ><img
+                  src="/images/characters_story/elena_frost.jpg"
+                  alt="Imagen Personaje Elena Frost"
+                /></label>
+            </li>
+            <li>
+              <label for="slide-6"
+                ><img
+                  src="/images/characters_story/mateo_frost.jpg"
+                  alt="Imagen Personaje Mateo Frost"
+                /></label>
+            </li>
+          </ul>
+          <button id="prev-btn" aria-label="Anterior">‹</button>
+          <button id="next-btn" aria-label="Siguiente">›</button>
         </div>
       </div>
-    <section>
-        <div class="container">
-          <div class="carousel">
-            <input type="radio" name="slides" checked="checked" id="slide-1">
-            <input type="radio" name="slides" id="slide-2">
-            <input type="radio" name="slides" id="slide-3">
-            <input type="radio" name="slides" id="slide-4">
-            <input type="radio" name="slides" id="slide-5">
-            <input type="radio" name="slides" id="slide-6">
-      
-            <ul class="carousel__slides">
-              <li class="carousel__slide">
-                <figure class="carousel__slide-content">
-                  <div class="carousel__slide-content-left">
-                    <img src="/images/characters_story/leo_vale.jpg" alt="Imagen Personaje Leo Vale">
-                  </div>
-                  <div class="carousel__slide-content-right">
-                    <h2>Leo Vale (16 años)</h2>
-                    <p>Interroga testigos con charlas casuales.</p>
-                  </div>
-                </figure>
-              </li>
-      
-              <li class="carousel__slide">
-                <figure class="carousel__slide-content">
-                  <div class="carousel__slide-content-left">
-                    <img src="/images/characters_story/maxwell_blackwood.jpg" alt="Imagen Personaje Maxwell Blackwood">
-                  </div>
-                  <div class="carousel__slide-content-right">
-                    <h2> Detective Maxwell Blackwood (37 años)</h2>
-                    <p>Usa un anillo de graduación policial (¿para recordar sus ideales perdidos?)...manipula el caso por ambición.</p>
-                  </div>
-                </figure>
-              </li>
-      
-              <li class="carousel__slide">
-                <figure class="carousel__slide-content">
-                  <div class="carousel__slide-content-left">
-                    <img src="/images/characters_story/luke_vale.jpg" alt="Imagen personaje Luke Vale">
-                  </div>
-                  <div class="carousel__slide-content-right">
-                    <h2>Luke Vale (16 años) </h2>
-                    <p>Analiza patrones (¿aprendió de su padre detective?) </p>
-                  </div>
-                </figure>
-              </li>
-      
-              <li class="carousel__slide">
-                <figure class="carousel__slide-content">
-                  <div class="carousel__slide-content-left">
-                    <img src="/images/characters_story/hugo_boss.jpg" alt="Imagen Personaje Hugo Boss">
-                  </div>
-                  <div class="carousel__slide-content-right">
-                    <h2>Hugo Boss (27 años) </h2>
-                    <p>Es un programador, Sospechoso o aliado inesperado?</p>
-                  </div>
-                </figure>
-              </li>
-      
-              <li class="carousel__slide">
-                <figure class="carousel__slide-content">
-                  <div class="carousel__slide-content-left">
-                    <img src="/images/characters_story/elena_frost.jpg" alt="Imagen Personaje Elena Frost">
-                  </div>
-                  <div class="carousel__slide-content-right">
-                    <h2> Elena Frost (19 años)</h2>
-                    <p>La hermana asesinada. Pelo azul eléctrico como Mateo. Ahora solo queda su diario cifrado, su celular y un hermano que clama justicia.</p>
-                  </div>
-                </figure>
-              </li>
-      
-              <li class="carousel__slide">
-                <figure class="carousel__slide-content">
-                  <div class="carousel__slide-content-left">
-                    <img src="/images/characters_story/mateo_frost.jpg" alt="Imagen Personaje Mateo Frost">
-                  </div>
-                  <div class="carousel__slide-content-right">
-                    <h2>Mateo Frost (20 años) </h2>
-                    <p>El hermano en duelo que busca justicia por su hermana asesinada.</p>
-                  </div>
-                </figure>
-              </li>
-            </ul>
-      
-            <ul class="carousel__thumbnails">
-              <li><label for="slide-1"><img src="/images/characters_story/leo_vale.jpg" alt="Imagen Personaje Leo Vale"></label></li>
-              <li><label for="slide-2"><img src="/images/characters_story/maxwell_blackwood.jpg" alt="Imagen Personaje Maxwell Blackwood"></label></li>
-              <li><label for="slide-3"><img src="/images/characters_story/luke_vale.jpg" alt="Imagen personaje Luke Vale"></label></li>
-              <li><label for="slide-4"><img src="/images/characters_story/hugo_boss.jpg" alt="Imagen Personaje Hugo Boss"></label></li>
-              <li><label for="slide-5"><img src="/images/characters_story/elena_frost.jpg" alt="Imagen Personaje Elena Frost"></label></li>
-              <li><label for="slide-6"><img src="/images/characters_story/mateo_frost.jpg" alt="Imagen Personaje Mateo Frost"></label></li>
-            </ul>
-            <button id="prev-btn" aria-label="Anterior">‹</button>
-            <button id="next-btn" aria-label="Siguiente">›</button>
-          </div>
-        </div>
-      </section>
-    </main>
-</Layout> 
+    </section>
+  </main>
+</Layout>
 
 <style>
-
   /*URL FONT*/
-  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-  /* Reset y estilos base globales */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-}
+  /* Reset and global base styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+  }
 
-html, body {
-  font-family: 'Press Start 2P', cursive;
-  width: 100%;
-  height: 100%;
-  background-image: url('/images/characters_story/background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: oklch(1 0 0);
-  overflow-x: hidden;
-}
+  html,
+  body {
+    font-family: "Press Start 2P", cursive;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/characters_story/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: oklch(1 0 0);
+    overflow-x: hidden;
+  }
 
-.section__title {
+  .section__title {
     color: oklch(0.8114 0.1077 215.27);
     padding-bottom: 1rem;
     text-align: center;
     font-size: 0.8rem;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
-
-}
-
-.container {
-  padding: 1rem 1.5rem;
-}
-
-.carousel {
-  position: relative;
-  overflow: visible;
-}
-
-.carousel input[type="radio"] {
-  display: none;
-}
-
-.carousel__slides {
-  list-style: none;
-  position: relative;
-  height: 25rem; 
-}
-
-.carousel__slide {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-
-/* Slide activo */
-.carousel input:nth-of-type(1):checked ~ .carousel__slides li:nth-of-type(1),
-.carousel input:nth-of-type(2):checked ~ .carousel__slides li:nth-of-type(2),
-.carousel input:nth-of-type(3):checked ~ .carousel__slides li:nth-of-type(3),
-.carousel input:nth-of-type(4):checked ~ .carousel__slides li:nth-of-type(4),
-.carousel input:nth-of-type(5):checked ~ .carousel__slides li:nth-of-type(5),
-.carousel input:nth-of-type(6):checked ~ .carousel__slides li:nth-of-type(6) {
-  left: 0;
-  opacity: 1;
-  z-index: 1;
-}
-
-/* Contenido del slide - Móvil: columna centrada */
-.carousel__slide-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  align-items: center;
-  height: 100%;
-  text-align: center;
-}
-
-/* Imagen del slide */
-.carousel__slide-content-left img {
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-  max-width: 18rem;
-  height: auto;
-  border-radius: 0.75rem;
-  object-fit: cover;
-}
-
-/* Texto del slide */
-.carousel__slide-content-right h2 {
-  color:oklch(0.7336 0.1262 218.64);
-  font-size: 1rem;
-  line-height: 1.2rem;
-  text-shadow: 2px 2px 4px rgb(0, 0, 0);
-
-}
-
-.carousel__slide-content-right p {
-  padding-top: 0.4rem;
-  font-size: 0.6rem;
-  line-height: 1.5;
-  text-shadow: 2px 2px 4px rgb(0, 0, 0);
-
-}
-
-/* Miniaturas */
-.carousel__thumbnails {
-  display: flex;
-  justify-content: center;
-  gap: 0.3rem;
-}
-
-.carousel__thumbnails img {
-  width: 2.8rem;
-  height: 6.25rem;
-  object-fit: cover;
-  cursor: pointer;
-  border: 2px solid transparent;
-  border-radius: 0.625rem;
-  transition: transform 0.8s ease, border-color 0.3s ease;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-
-}
-
-.carousel__thumbnails img:hover {
-  transform: scale(1.05);
-  border-color: oklch(1 0 0);
-}
-
-/* Botones next/prev */
-.carousel button {
-  position: absolute;
-  top: 27%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
-  border: none;
-  color: oklch(1 0 0);
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 50%;
-  user-select: none;
-  transition: background 0.3s ease;
-  z-index: 10;
-}
-
-#prev-btn {
-  left: 0.5rem;
-}
-
-#next-btn {
-  right: 0.5rem;
-}
-
-.carousel button:hover {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-/* ------------------ MEDIA QUERIES ------------------ */
-
-/* Tablet: 481px a 769px */
-@media (min-width: 481px) and (max-width: 769px) {
-
-  .section__title {
-    font-size: 1rem;
   }
 
-
-  .carousel__slide-content {
-    gap: 2rem;
-    padding: 1.5rem;
-  }
-
-  .carousel__slide-content-left img {
-    max-width: 15rem;
-  }
-
-  .carousel__slide-content-right h2 {
-    font-size: 1rem;
-  }
-
-  .carousel__slide-content-right p {
-    font-size: 0.5rem;
-  }
-
-
-  .carousel__thumbnails img {
-    width: 4.4rem;
-    height: 7rem;
-  }
-
-
-  .carousel button {
-    font-size: 2.5rem;
-    padding: 0.5rem 1.5rem;
-  }
-
-  #prev-btn {
-    left: 1rem;
-  }
-
-  #next-btn {
-    right: 1rem;
-  }
-}
-
-/* Desktop: 1220px */
-@media (min-width: 770px) {
-  .section__title {
-    font-size: 1.5rem;
-    padding-top: 1rem;
-  }
-
-  .carousel__slide-content {
-    gap: 2.5rem;
-    padding: 2rem;
-  }
-
-  .carousel__slide-content-right h2 {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  .carousel__slide-content-right p {
-    text-align: center;
-    max-width: 40rem;
-
-  }
-
-  .carousel__thumbnails {
-    margin: 1rem;
-  }
-
-  .carousel__thumbnails img {
-    width: 8rem;
-    height: 7.5rem;
-  }
-
-  .carousel button {
-    font-size: 3rem;
+  .container {
     padding: 1rem 1.5rem;
   }
 
+  .carousel {
+    position: relative;
+    overflow: visible;
+  }
+
+  .carousel input[type="radio"] {
+    display: none;
+  }
+
+  .carousel__slides {
+    list-style: none;
+    position: relative;
+    height: 25rem;
+  }
+
+  .carousel__slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  /* Slide active */
+  .carousel input:nth-of-type(1):checked ~ .carousel__slides li:nth-of-type(1),
+  .carousel input:nth-of-type(2):checked ~ .carousel__slides li:nth-of-type(2),
+  .carousel input:nth-of-type(3):checked ~ .carousel__slides li:nth-of-type(3),
+  .carousel input:nth-of-type(4):checked ~ .carousel__slides li:nth-of-type(4),
+  .carousel input:nth-of-type(5):checked ~ .carousel__slides li:nth-of-type(5),
+  .carousel input:nth-of-type(6):checked ~ .carousel__slides li:nth-of-type(6) {
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  
+/* Slide content - Mobile: centered column */
+  .carousel__slide-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
+
+  
+/* Slide image */
+  .carousel__slide-content-left img {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 18rem;
+    height: auto;
+    border-radius: 0.75rem;
+    object-fit: cover;
+  }
+
+  /* slide text*/
+  .carousel__slide-content-right h2 {
+    color: oklch(0.7336 0.1262 218.64);
+    font-size: 1rem;
+    line-height: 1.2rem;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  }
+
+  .carousel__slide-content-right p {
+    padding-top: 0.4rem;
+    font-size: 0.6rem;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  }
+
+  /* Miniatures */
+  .carousel__thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .carousel__thumbnails img {
+    width: 2.8rem;
+    height: 6.25rem;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 0.625rem;
+    transition:
+      transform 0.8s ease,
+      border-color 0.3s ease;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .carousel__thumbnails img:hover {
+    transform: scale(1.05);
+    border-color: oklch(1 0 0);
+  }
+
+  /* Next/Prev buttons */
+  .carousel button {
+    position: absolute;
+    top: 27%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: oklch(1 0 0);
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    transition: background 0.3s ease;
+    z-index: 10;
+  }
+
   #prev-btn {
-    left: 11rem;
+    left: 0.5rem;
   }
 
   #next-btn {
-    right: 10rem;
+    right: 0.5rem;
   }
-}
+
+  .carousel button:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  /* ------------------ MEDIA QUERIES ------------------ */
+
+  /* Tablet: 481px a 769px */
+  @media (min-width: 481px) and (max-width: 769px) {
+    .section__title {
+      font-size: 1rem;
+    }
+
+    .carousel__slide-content {
+      gap: 2rem;
+      padding: 1.5rem;
+    }
+
+    .carousel__slide-content-left img {
+      max-width: 15rem;
+    }
+
+    .carousel__slide-content-right h2 {
+      font-size: 1rem;
+    }
+
+    .carousel__slide-content-right p {
+      font-size: 0.5rem;
+    }
+
+    .carousel__thumbnails img {
+      width: 4.4rem;
+      height: 7rem;
+    }
+
+    .carousel button {
+      font-size: 2.5rem;
+      padding: 0.5rem 1.5rem;
+    }
+
+    #prev-btn {
+      left: 1rem;
+    }
+
+    #next-btn {
+      right: 1rem;
+    }
+  }
+
+  /* Desktop: 1220px */
+  @media (min-width: 770px) {
+    .section__title {
+      font-size: 1.5rem;
+      padding-top: 1rem;
+    }
+
+    .carousel__slide-content {
+      gap: 2.5rem;
+      padding: 2rem;
+    }
+
+    .carousel__slide-content-right h2 {
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    .carousel__slide-content-right p {
+      text-align: center;
+      max-width: 40rem;
+    }
+
+    .carousel__thumbnails {
+      margin: 1rem;
+    }
+
+    .carousel__thumbnails img {
+      width: 8rem;
+      height: 7.5rem;
+    }
+
+    .carousel button {
+      font-size: 3rem;
+      padding: 1rem 1.5rem;
+    }
+
+    #prev-btn {
+      left: 11rem;
+    }
+
+    #next-btn {
+      right: 10rem;
+    }
+  }
 </style>
 
 <script is:inline>
-
-  // Obtener todos los inputs radio de slides
+  
+// Get all radio inputs from slides
   const slides = document.querySelectorAll('.carousel input[type="radio"]');
-  const nextBtn = document.getElementById('next-btn');
-  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById("next-btn");
+  const prevBtn = document.getElementById("prev-btn");
 
-  // Función para obtener el índice del slide activo
+  // Function to get the index of the active slide
   function getCurrentIndex() {
-    return Array.from(slides).findIndex(input => input.checked);
+    return Array.from(slides).findIndex((input) => input.checked);
   }
 
-  // Avanzar slide
+  
+// Advance slide
   function nextSlide() {
     let currentIndex = getCurrentIndex();
     slides[(currentIndex + 1) % slides.length].checked = true;
   }
 
-  // Retroceder slide
+  
+// Back slide
   function prevSlide() {
     let currentIndex = getCurrentIndex();
     slides[(currentIndex - 1 + slides.length) % slides.length].checked = true;
   }
 
-  nextBtn.addEventListener('click', nextSlide);
-  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
 
-  // Autoplay cada 4 segundos
+  // Autoplay every 4 seconds
   setInterval(nextSlide, 8000);
 </script>
-      
-
