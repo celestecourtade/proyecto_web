@@ -38,9 +38,10 @@ const {
         <img
           class={`Character_spritesheet pixelart ${initialDirection}`}
           src={sprite}
-          alt="Character"
+          alt="personaje blanco"
         />
       </div>
+      <!-- you can use .face-right .face-left .face-down to change direction of the character -->
       <!---------------------------------------------------------------------------------------------------- -->
     </section>
     <audio autoplay loop>
@@ -294,7 +295,7 @@ const {
         if (target!.textContent === data[numberId].correct) {
           document.querySelector(".situation");
           document.removeEventListener("click", currentAnswerListener!);
-          //5... Cargar nuevo caso
+          //5... Upload new case
           loadCases(getRandomId(1, 21));
         }
       }
