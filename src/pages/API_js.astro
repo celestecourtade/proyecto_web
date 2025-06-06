@@ -277,6 +277,9 @@ const {
       currentAnswerListener = handleAnswerClick(data, numberId);
       document.querySelector(".situation");
       document.addEventListener("click", currentAnswerListener);
+          const target = event.target as HTMLElement;
+    console.log(target);
+
     } catch (error) {
       console.error("Error:", error);
       document.getElementById("situation__presentation")!.textContent = "Error";
